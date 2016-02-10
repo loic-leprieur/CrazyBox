@@ -6,7 +6,7 @@
  * Time: 21:58
  */
 
-namespace controllers;
+namespace src\controllers;
 use views\VueAccueil;
 
 class GeneralController{

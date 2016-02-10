@@ -14,7 +14,7 @@ include 'vendor/autoload.php';
 $app = new \Slim\Slim();
 
 $app->get('/accueil', function(){
-$controller = new \controllers\GeneralController();
+$controller = new src\controllers\GeneralController();
 $controller->accueil();
 });
 
