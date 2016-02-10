@@ -6,7 +6,7 @@
  * Time: 22:44
  */
 
-namespace views;
+namespace app\views;
 
 
 class VueAccueil{

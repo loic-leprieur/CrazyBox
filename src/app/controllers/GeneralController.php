@@ -6,8 +6,8 @@
  * Time: 21:58
  */
 
-namespace src\controllers;
-use views\VueAccueil;
+namespace app\controllers;
+use app\views\VueAccueil;
 
 class GeneralController{
     public function __construct(){
