@@ -15,7 +15,8 @@ class VueAccueil{
     }
 
     public function nonConnecte(){
-        $html = '<!DOCTYPE html>
+        $html = <<<END
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -178,8 +179,8 @@ class VueAccueil{
   <script src="js/init.js"></script>
 
   </body>
-</html>';
-      
+</html>;
+END;
         echo $html;
     }
 }
