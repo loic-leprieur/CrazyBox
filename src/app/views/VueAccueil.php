@@ -58,7 +58,7 @@ class VueAccueil{
 
       </div>
     </div>
-    <div class="parallax"><img src="background1.jpg" alt="Unsplashed background img 1"></div>
+    <div class="parallax"><img src="/dut_s4_ccd16_cglmlh/images/background1.jpg" alt="Unsplashed background img 1"></div>
   </div>
 
 
