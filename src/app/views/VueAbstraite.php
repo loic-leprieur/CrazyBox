@@ -22,7 +22,14 @@ abstract class VueAbstraite{
 
     public function __construct($p = null){
         $this->params = $p;
-        $this->racine = $_SERVER['REQUEST_URI'];
+		$tab = explode("/",$_SERVER['SCRIPT_NAME']);
+		$tab[count($tab)-1] = null;
+		$res = "";
+		foreach($tab as $v) {
+			if($v != null)
+			$res .= "/".$v;
+		}
+        $this->racine = $res."/";
     }
 
     public function renderBody(){
