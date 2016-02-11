@@ -1,20 +1,19 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Loic
- * Date: 18/01/2016
- * Time: 22:44
+ * User: loic
+ * Date: 11/02/16
+ * Time: 10:30
  */
 
 namespace app\views;
 
 
-class VueAccueil{
-
+class VueGenerale{
     public function __construct(){
     }
 
-    public function nonConnecte(){
+    public function render($content = null){
         $html = <<<END
 <!DOCTYPE html>
 <html lang="fr">
@@ -185,5 +184,6 @@ class VueAccueil{
 </html>;
 END;
         echo $html;
+
     }
 }

@@ -20,4 +20,8 @@ $app->get('/', function(){
 	$controller->accueil();
 });
 
+$app->get('/pochette', function(){
+	$controller = new app\controllers\GeneralController();
+	$controller->pochette();
+});
 $app->run();

@@ -8,6 +8,7 @@
 
 namespace app\controllers;
 use app\views\VueAccueil;
+use app\views\VueGenerale;
 
 class GeneralController{
     public function __construct(){
@@ -16,5 +17,10 @@ class GeneralController{
     public function accueil(){
         $vue = new VueAccueil();
         $vue->nonConnecte();
+    }
+
+    public function pochette(){
+        $vue = new VueGenerale();
+        $vue->render();
     }
 }
