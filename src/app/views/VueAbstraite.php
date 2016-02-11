@@ -17,7 +17,7 @@ use app\views\VueGenerale;
  */
 abstract class VueAbstraite{
 
-    private $params;
+    protected $params;
     protected $racine;
 
     public function __construct($p = null){

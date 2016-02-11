@@ -27,20 +27,4 @@ $app->get('/pochette', function(){
 	$controller->traiter();
 });
 
-/*
- * TEST
- */
-use app\models\Prestation;
-use app\views\VueCatalogue;
-
-$app->get('/test', function(){
-	$params = Prestation::all()->toArray();
-	$controller = new VueCatalogue($params);
-	echo $controller->render();
-});
-
-/*
- * FIN TEST
- */
-
 $app->run();
