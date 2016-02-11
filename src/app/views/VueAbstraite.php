@@ -10,8 +10,12 @@ namespace app\views;
 use app\views\VueAccueil;
 use app\views\VueGenerale;
 
+/**
+ * Class VueAbstraite qui donne la structure
+ * des vues gérant le html
+ * @package app\views
+ */
 abstract class VueAbstraite{
-    private $model;
     private $params;
 
     public function __construct($p){
