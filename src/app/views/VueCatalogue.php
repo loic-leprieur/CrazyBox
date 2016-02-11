@@ -60,7 +60,7 @@ END;
 			$prix = $val['prix'];
 			$html .= <<<END
           <tr class="ligneCatalogue">
-          	<td class="center-align"><a href="detail/$id" class="black"><h5>$nom</h5></a></td>
+          	<td onmouseover="this.style.background='#ffecb3'" onmouseout="this.style.background='transparent'" class="center-align"><a href="detail/$id" class="black-text"><h5>$nom</h5></a></td>
           	<td class="center-align"><img src="$this->racine/images/$img" height="150px" alt="$nom"></td>
           	<td class="center-align"><h5>$prix €</h5></td>
           	<td class="center-align">

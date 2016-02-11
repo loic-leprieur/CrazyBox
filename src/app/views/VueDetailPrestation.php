@@ -43,10 +43,12 @@ class VueDetailPrestation extends VueAbstraite
             <tbody>
               <tr class="ligneCatalogue" style="height: 50px;">
                 <td class="center-align"><img src="$this->racine/images/$imgPres" height="200px" alt="$nomPres"></td>
-                <td class="center-align"><h6>$desPres</h6></td>
+                <td class="center-align"><h5>$desPres</h5></td>
               </tr>
             </tbody>
         </table>
+        <br>
+        <h4 class="pink-text text-darken-3 center-align">Vous pouvez retourner à la page précédente en cliquant <a href="$this->racine/index.php/pochette" class="orange-text text-darken-4">ICI</a>.</h4>
 
         <br><br><br>
 END;
