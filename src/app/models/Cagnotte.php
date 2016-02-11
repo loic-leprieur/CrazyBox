@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
  * Class CagnotteModel qui représente le modèle de la table "cagnotte" de la base de données
  * @package app\models
  */
-class CagnotteModel extends Model {
+class Cagnotte extends Model {
 
     /**
      * Table cagnotte de la base de données
