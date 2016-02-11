@@ -20,9 +20,16 @@ abstract class VueAbstraite{
     private $params;
     protected $racine;
 
-    public function __construct($p){
+    public function __construct($p = null){
         $this->params = $p;
-        $this->racine = $_SERVER['SCRIPT_NAME'];
+		$tab = explode("/",$_SERVER['SCRIPT_NAME']);
+		$tab[count($tab)-1] = null;
+		$res = "";
+		foreach($tab as $v) {
+			if($v != null)
+			$res .= "/".$v;
+		}
+        $this->racine = $res."/";
     }
 
     public function renderBody(){
@@ -44,8 +51,8 @@ abstract class VueAbstraite{
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="$this->racine" . "css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="$this->racine" . "css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="$this->racine/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="$this->racine/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 <body>
   <nav class="white" role="navigation">
@@ -77,7 +84,7 @@ abstract class VueAbstraite{
 
       </div>
     </div>
-    <div class="parallax"><img src=$this->racine."images/background1.jpg" alt="Unsplashed background img 1"></div>
+    <div class="parallax"><img src="$this->racine/images/background1.jpg" alt="Unsplashed background img 1"></div>
   </div>
 END;
         return $html;
@@ -124,8 +131,8 @@ END;
 
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src=$this->racine"js/materialize.js"></script>
-  <script src=$this->racine"js/init.js"></script>
+  <script src="$this->racine/js/materialize.js"></script>
+  <script src="$this->racine/js/init.js"></script>
 
   </body>
 </html>
