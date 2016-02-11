@@ -6,7 +6,7 @@
  * Time: 11:17
  */
 
-namespace src\app\views;
+namespace app\views;
 
 
 use app\views\VueAbstraite;
@@ -15,9 +15,11 @@ use app\vue\VueCatalogue;
 class VuePochette extends VueAbstraite
 {
 
+    public function __construct(){
+        parent::__construct();
+    }
 
-
-    function render($content){
+    public function render(){
 
 
         echo ' <div class="row">

@@ -8,7 +8,8 @@
 
 namespace app\controllers;
 use app\controllers\AbstraitController;
-use src\app\views\VuePochette;
+use app\views\VueAccueil;
+use app\views\VuePochette;
 
 class PochetteController extends AbstraitController{
     public function __construct($m = null)
