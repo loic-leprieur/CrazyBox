@@ -50,20 +50,20 @@ END;
 			$prix = $val['prix'];
 
 			$html .= <<<END
-          <tr>            
+          <tr class="ligneCatalogue">
               <td class="center-align"><h4>$nom</h4></td>
               <td class="center-align"><img src="$this->racine/images/$img" height="150px" alt="$nom"></td>
               <td class="center-align"><h4>$prix €</h4></td>
               <td class="center-align">
               	<p>
-              		<input class="red-text" type="checkbox" id="$id" />
+              		<input class="red-text" type="checkbox" id="$id" name="$id" />
               		<label for="$id"></label>
               	</p>
               </td>
           </tr>
 END;
 		}
-		
+
 		$html .= <<<END
 		</tbody>
 </table>
