@@ -29,7 +29,7 @@ abstract class VueAbstraite{
 			if($v != null)
 			$res .= "/".$v;
 		}
-        $this->racine = $res."/";
+        $this->racine = $res;
     }
 
     public function renderBody(){

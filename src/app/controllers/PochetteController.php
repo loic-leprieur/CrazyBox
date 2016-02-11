@@ -8,8 +8,12 @@
 
 namespace app\controllers;
 use app\controllers\AbstraitController;
+use app\models\Cagnotte;
+use app\models\Prestation;
 use app\views\VueAccueil;
 use app\views\VuePochette;
+use conf\ConnectionFactory;
+use Illuminate\Support\Facades\DB;
 
 class PochetteController extends AbstraitController{
     public function __construct($m = null)
@@ -47,12 +51,42 @@ class PochetteController extends AbstraitController{
         $nom = filter_var($_POST['nomdest'],FILTER_SANITIZE_STRING);
         $message = filter_var($_POST['messagedest'],FILTER_SANITIZE_STRING);
 
-        var_dump($_POST);
+        $objSelc = array();
 
-        echo $nom;
-        echo $message;
+        $nbMaxPres = Prestation::hydrateRaw("SELECT MAX(id) FROM prestation")[0]['MAX(id)'];
+        $somme = 0;
 
 
+         //boucle qui permet de recuperer les prestations selectionnees
+
+        for($i = 1; $i <= $nbMaxPres ; $i++){
+
+            if(isset($_POST["$i"])){
+
+                $objSelc[] = $i;
+                $somme += Prestation::find($i)->prix;
+
+            }
+
+        }
+
+        //test si trois prestations au moins ont ete selectionnees
+
+        if(sizeof($objSelc) < 3){
+
+            header("location:/pochette");
+
+        }
+
+        //recuperation de la coche secrete
+
+        $secret = isset($_POST['pochSecrete']);
+
+
+
+        $cagnote = new Cagnotte();
+        $cagnote->montantActuel = $somme;
+        $cagnote->atteinte = 0;
 
 
     }
