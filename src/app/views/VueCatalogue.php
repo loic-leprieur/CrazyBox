@@ -1,5 +1,6 @@
 <?php
 namespace app\views;
+use app\models\Prestation;
 
 /**
  * Classe qui permet de générer le code HTML relatif au catalogue.
@@ -71,5 +72,45 @@ END;
 		
 		return $html;
 	}
-	
+
+	public function genererPrestationsCagnotte($numPoch) {
+
+		$tabPrestations = Prestation::hydrateRaw("SELECT DISTINCT id,nom,img,prix FROM Prestation INNER JOIN Contient ON Prestation.id = Contient.idPrestation WHERE idPochette = $numPoch")->toArray();
+
+		$html = <<<END
+		<br><br>
+<h3 class="orange-text text-darken-4 center-align">Prestations associées</h3>
+<table class="container responsive-table highlight bordered">
+        <thead class="center-align red-text">
+          <tr>
+              <th class="center-align"></th>
+              <th class="center-align"></th>
+          </tr>
+        </thead>
+		<tbody>
+END;
+
+		foreach($tabPrestations as $val) {
+			$id = $val['id'];
+			$nom = $val['nom'];
+			$img = $val['img'];
+			$prix = $val['prix'];
+
+			$html .= <<<END
+          <tr class="ligneCatalogue" style="height: 50px;">
+          	<td class="center-align"><h6>$nom</h6></td>
+          	<td class="center-align"><h6>$prix €</h6></td>
+          </tr>
+END;
+		}
+
+		$html .= <<<END
+		</tbody>
+</table>
+END;
+
+		return $html;
+
+	}
+
 }
