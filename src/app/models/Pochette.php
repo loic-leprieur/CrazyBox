@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
  * Class PochetteModel qui représente le modèle de la table "pochette" de la base de données
  * @package app\models
  */
-class PochetteModel extends Model {
+class Pochette extends Model {
 
     /**
      * Table pochette de la base de données

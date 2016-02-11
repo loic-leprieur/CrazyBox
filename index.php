@@ -13,8 +13,6 @@ include 'vendor/autoload.php';
 
 $app = new \Slim\Slim();
 
-
-
 $app->get('/', function(){
 	$controller = new app\controllers\GeneralController();
 	$controller->accueil();
@@ -23,6 +21,31 @@ $app->get('/', function(){
 $app->get('/pochette', function(){
 	$controller = new app\controllers\GeneralController();
 	$controller->pochette();
+});
+
+$app->get('/catalogue', function(){
+	$controller = new app\controllers\CatalogueController();
+	$controller->afficherMenu();
+});
+
+$app->get('/catalogue/attention', function(){
+	$controller = new app\controllers\CatalogueController();
+	$controller->afficherPrestations('Attention');
+});
+
+$app->get('/catalogue/activite', function(){
+	$controller = new app\controllers\CatalogueController();
+	$controller->afficherPrestations('Activité');
+});
+
+$app->get('/catalogue/restauration', function(){
+	$controller = new app\controllers\CatalogueController();
+	$controller->afficherPrestations('Restauration');
+});
+
+$app->get('/catalogue/hebergement', function(){
+	$controller = new app\controllers\CatalogueController();
+	$controller->afficherPrestations('Hébergement');
 });
 
 $app->run();

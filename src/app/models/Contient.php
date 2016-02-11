@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
  * Class ContientModel qui représente le modèle de la table "contient" de la base de données
  * @package app\models
  */
-class ContientModel extends Model {
+class Contient extends Model {
 
     /**
      * Table contient de la base de données
