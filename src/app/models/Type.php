@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
  * Class TypeModel qui représente le modèle de la table "type" de la base de données
  * @package app\models
  */
-class TypeModel extends Model {
+class Type extends Model {
 
     /**
      * Table type de la base de données
