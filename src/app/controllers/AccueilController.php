@@ -25,7 +25,7 @@ class AccueilController extends AbstraitController{
         $vue = new VueAccueil();
 
         // affichage du body
-        $vue->render();
+        $vue->renderBody();
 
     }
 }

@@ -23,6 +23,6 @@ class PochetteController extends AbstraitController{
     public function traiter(){
         //affichage du header
         $vue = new VuePochette();
-        $vue->render();
+        $vue->renderBody();
     }
 }

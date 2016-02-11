@@ -32,7 +32,7 @@ class CatalogueController extends ControllerAbstrait {
 	public function traiter() {
 
 		$vue = new VueCatalogue();
-		$vue->render();
+		$vue->renderBody();
 
 	}
 	
