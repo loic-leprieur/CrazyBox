@@ -32,9 +32,8 @@ class VuePochetteCreee extends VueAbstraite
     			</h5>
     			<br>
     			<h4 class="center-align">
-    					<a href="$this->racine/cagnotte/$url" class="orange-text text-darken-4 card-panel lighten-2">$host$this->racine/cagnotte/$url</a>
+    				<a href="$this->racine/index.php/cagnotte/$url" class="orange-text text-darken-4 card-panel lighten-2">$host$this->racine/index.php/cagnotte/$url</a>
     			</h4>
-    			
     		</div>    	
     	</div>
 
