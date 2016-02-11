@@ -10,6 +10,7 @@ namespace app\controllers;
 
 
 use app\models\Cagnotte;
+use app\models\Pochette;
 use app\views\VueCagnotte;
 use app\views\VueVisuel;
 
