@@ -7,10 +7,11 @@
  */
 
 namespace app\controllers;
-use app\controllers\ControllerAbstrait;
+use app\controllers\AbstraitController;
+use app\views\VueAccueil;
 
-class AccueilController extends ControllerAbstrait{
-    public function __construct($m){
+class AccueilController extends AbstraitController{
+    public function __construct($m = null){
         parent::__construct($m);
     }
 
@@ -20,14 +21,10 @@ class AccueilController extends ControllerAbstrait{
      */
     public function render(){
         //affichage du header
-        $vueBase = new VueGenerale();
-        $vueBase->header();
+        $vue = new VueAccueil();
 
         // affichage du body
-        $vue = new VueAccueil();
-        $vue->nonConnecte();
+        $vue->render();
 
-        // affichage du footer
-        $vueBase->footer();
     }
 }

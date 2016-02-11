@@ -17,9 +17,8 @@ use app\views\VueGenerale;
  * @package app\controllers
  */
 abstract class AbstraitController{
-    private $racine;
-
+    private $model;
     public function __construct($m = null){
-        $this->racine = $_SERVER['SCRIPT_NAME'];
+        $this->model = $m;
     }
 }

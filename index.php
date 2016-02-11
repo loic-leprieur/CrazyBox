@@ -14,13 +14,13 @@ include 'vendor/autoload.php';
 $app = new \Slim\Slim();
 
 $app->get('/', function(){
-	$controller = new app\controllers\GeneralController();
-	$controller->accueil();
+	$controller = new app\controllers\AccueilController();
+	$controller->render();
 });
 
 $app->get('/pochette', function(){
-	$controller = new app\controllers\GeneralController();
-	$controller->pochette();
+	$controller = new app\controllers\PochetteController();
+	$controller->render();
 });
 
 $app->get('/catalogue', function(){
