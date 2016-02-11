@@ -11,11 +11,9 @@ use app\views\VueAccueil;
 use app\views\VueGenerale;
 
 abstract class ControllerAbstrait{
-    private $model;
     private $racine;
 
     public function __construct($m = null){
         $this->racine = $_SERVER['SCRIPT_NAME'];
-        $this->model = m;
     }
 }

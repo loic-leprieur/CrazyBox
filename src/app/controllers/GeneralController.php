@@ -10,9 +10,8 @@ namespace app\controllers;
 use app\controllers\ControllerAbstrait;
 
 class GeneralController extends ControllerAbstrait{
-    public function __construct($m)
-    {
-        parent::__construct($m);
+    public function __construct(){
+        parent::__construct();
     }
 
     public function accueil()
