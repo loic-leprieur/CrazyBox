@@ -26,4 +26,34 @@ class PochetteController extends AbstraitController{
         $vue = new VuePochette();
         $vue->renderBody();
     }
+
+
+
+    public function validation(){
+
+        /*
+
+              1 : VERIFIER LES INFORMATIONS (FILTER + nb article)
+
+              2 : INSERER DANS LA BASE DE DONNEES
+
+              3 : GENERER l'URL
+
+              4 : GENERER LA PAGE DE REPONSE
+
+
+        */
+
+        $nom = filter_var($_POST['nomdest'],FILTER_SANITIZE_STRING);
+        $message = filter_var($_POST['messagedest'],FILTER_SANITIZE_STRING);
+
+        var_dump($_POST);
+
+        echo $nom;
+        echo $message;
+
+
+
+
+    }
 }
