@@ -1,5 +1,5 @@
 <?php
-namespace app\vue;
+namespace app\views;
 
 /**
  * Classe qui permet de générer le code HTML relatif au catalogue.
@@ -41,17 +41,17 @@ class VueCatalogue extends VueAbstraite {
         </thead>
 		<tbody>
 END;
-		
+
 		foreach($this->params as $val) {
 			$id = $val['id'];
 			$nom = $val['nom'];
-			$img = $val['image'];
+			$img = $val['img'];
 			$prix = $val['prix'];
 
 			$html .= <<<END
           <tr>            
               <td class="center-align">$nom</td>
-              <td class="center-align"><img src="$racine/images/$img" height="150px" alt="$nom"></td>
+              <td class="center-align"><img src="$this->racine/images/$img" height="150px" alt="$nom"></td>
               <td class="center-align">$prix €</td>
             
               <td class="center-align"><input class="center-align" type="checkbox" id="$id"></td>		

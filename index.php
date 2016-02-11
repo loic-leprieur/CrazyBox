@@ -13,6 +13,10 @@ include 'vendor/autoload.php';
 
 $app = new \Slim\Slim();
 
+\conf\ConnectionFactory::setConfig('src/conf/db.config.ini');
+
+$db = \conf\ConnectionFactory::makeConnection();
+
 $app->get('/', function(){
 	$controller = new app\controllers\AccueilController();
 	$controller->traiter();
@@ -23,29 +27,20 @@ $app->get('/pochette', function(){
 	$controller->traiter();
 });
 
-$app->get('/catalogue', function(){
-	$controller = new app\controllers\CatalogueController();
-	$controller->traiter();
+/*
+ * TEST
+ */
+use app\models\Prestation;
+use app\views\VueCatalogue;
+
+$app->get('/test', function(){
+	$params = Prestation::all()->toArray();
+	$controller = new VueCatalogue($params);
+	echo $controller->render();
 });
 
-$app->get('/catalogue/attention', function(){
-	$controller = new app\controllers\CatalogueController();
-	$controller->afficherPrestations('Attention');
-});
-
-$app->get('/catalogue/activite', function(){
-	$controller = new app\controllers\CatalogueController();
-	$controller->afficherPrestations('Activité');
-});
-
-$app->get('/catalogue/restauration', function(){
-	$controller = new app\controllers\CatalogueController();
-	$controller->afficherPrestations('Restauration');
-});
-
-$app->get('/catalogue/hebergement', function(){
-	$controller = new app\controllers\CatalogueController();
-	$controller->afficherPrestations('Hébergement');
-});
+/*
+ * FIN TEST
+ */
 
 $app->run();
