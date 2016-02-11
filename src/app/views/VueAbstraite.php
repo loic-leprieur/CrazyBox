@@ -56,23 +56,23 @@ abstract class VueAbstraite{
   <link href="$this->racine/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 <body>
-  <nav class="white" role="navigation">
+  <nav class=" pink darken-2" role="navigation">
     <div class="nav-wrapper container">
-      <a id="logo-container" href="$this->racine/" class="brand-logo">CrazyBox</a>
+      <a id="logo-container" href="$this->racine/" class="white-text brand-logo">CrazyBox</a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="$this->racine/">Accueil</a></li>
-        <li><a href="$this->racine/index.php/pochette">Créer une pochette</a></li>
-        <li><a href="$this->racine/index.php/catalogue">Catalogue</a></li>
+        <li><a class="white-text" href="$this->racine/">Accueil</a></li>
+        <li><a class="white-text" href="$this->racine/index.php/pochette">Créer une pochette</a></li>
+        <li><a class="white-text" href="$this->racine/index.php/catalogue">Catalogue</a></li>
       </ul>
 
-      <ul id="nav-mobile" class="side-nav">
+      <ul id="nav-mobile" class="side-nav pink darken-2">
         <li>
-            <a href="$this->racine/">Accueil</a>
+            <a class="white-text" href="$this->racine/">Accueil</a>
         </li>
-        <li><a href="$this->racine/index.php/pochette">Créer une pochette</a></li>
-        <li><a href="$this->racine/index.php/catalogue">Catalogue</a></li>
+        <li><a class="white-text" href="$this->racine/index.php/pochette">Créer une pochette</a></li>
+        <li><a class="white-text" href="$this->racine/index.php/catalogue">Catalogue</a></li>
       </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons white-text">menu</i></a>
     </div>
   </nav>
 
@@ -80,7 +80,7 @@ abstract class VueAbstraite{
     <div class="section no-pad-bot">
       <div class="container">
         <br><br>
-        <h1 class="header center red-text text-darken-4 ">CrazyBox</h1>
+        <h1 class="header center red-text text-darken-4 "><b>CrazyBox</b></h1>
 
         <div class="row center">
           <h4 class="header col s12 pink-text text-lighten-1">Concevez, financez et partagez une expérience originale</h5>
@@ -97,7 +97,7 @@ END;
     }
     public function footer(){
         $html = <<<END
-<footer class="page-footer display=flex pink darken-2">
+<footer class="page-footer pink darken-2">
     <div class="container">
       <div class="row ">
         <div class="col l6 s12">
