@@ -75,7 +75,7 @@ END;
 
 	public function genererPrestationsCagnotte($numPoch) {
 
-		$tabPrestations = Prestation::hydrateRaw("SELECT DISTINCT id,nom,img,prix FROM Prestation INNER JOIN Contient ON Prestation.id = Contient.idPrestation WHERE idPochette = $numPoch")->toArray();
+		$tabPrestations = Prestation::hydrateRaw("SELECT DISTINCT id,nom,img,prix FROM prestation INNER JOIN contient ON Prestation.id = Contient.idPrestation WHERE idPochette = $numPoch")->toArray();
 
 		$html = <<<END
 		<br><br>
