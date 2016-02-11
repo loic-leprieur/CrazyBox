@@ -70,19 +70,35 @@ abstract class VueAbstraite{
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
   </nav>
+
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center red-text text-darken-4 ">CrazyBox</h1>
+
+        <div class="row center">
+          <h4 class="header col s12 pink-text text-lighten-1">Concevez, financez et partagez une expérience originale</h5>
+        </div>
+        <br><br>
+
+      </div>
+    </div>
+    <div class="parallax"><img src="$this->racine/images/roseEspoir.jpg"></div>
+  </div>
 END;
         return $html;
 
     }
     public function footer(){
         $html = <<<END
-<footer class="page-footer pink darken-2">
+<footer class="page-footer display=flex pink darken-2">
     <div class="container">
-      <div class="row">
+      <div class="row ">
         <div class="col l6 s12">
           <h5 class="white-text">Qui sommes nous ?</h5>
-          <p class="grey-text text-lighten-4">Créée le 11/02/2016, CrazyBox est une équipe de 6 jeunes développeurs passionnés qui souhaite
-          apporter une solution pratique pour ceux qui offre des cadeaux hors du commun.</p>
+          <p class="grey-text text-lighten-4">Créée le 11/02/2016, CrazyBox est une start-up de développeurs passionnés qui souhaitent
+          apporter une solution pratique pour offrir aux.</p>
 
 
         </div>
@@ -102,9 +118,11 @@ END;
           </ul>
         </div>
       </div>
+      <div class="col l3 s6 pink darken-3 center">
+         © Copyright - CrazyBox SAS 2016
+      </div>
     </div>
   </footer>
-
 
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
