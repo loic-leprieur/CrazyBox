@@ -13,6 +13,7 @@ class VueCatalogue extends VueAbstraite {
 	 */
 	public function __construct(array $params = null) {
 		parent::__construct($params);
+		echo $this->racine;
 	}
 
 	/**
