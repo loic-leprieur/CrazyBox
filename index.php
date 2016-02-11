@@ -37,7 +37,7 @@ $app->get('/cagnotte/:id', function($id){
 	$controller->traiter();
 });
 
-$app->get('/test/:id', function($id){
+$app->get('/visuel/:id', function($id){
 	$controller = new app\controllers\VisuelController($id);
 	$controller->traiter();
 });

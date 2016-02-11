@@ -20,7 +20,6 @@ class VueVisuel extends VueAbstraite
     }
 
     public function render(){
-
         $numpoch = $this->params[0]['idPochette'];
         $nomdest = Pochette::find($numpoch)['nom'];
 

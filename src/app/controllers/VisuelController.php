@@ -26,7 +26,6 @@ class VisuelController
 
 
     public function traiter() {
-
         $vue = new VueVisuel(Cagnotte::where("id_url","=",$this->id)->get()->toArray());
         $vue->renderBody();
     }
