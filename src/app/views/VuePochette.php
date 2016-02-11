@@ -24,6 +24,7 @@ class VuePochette extends VueAbstraite
 
 
         echo '      <br><br>
+                    <b><h3 class="orange-text darken-4 center-align">Informations</h3></b>
                     <div class="row">
                         <form class="col s12" method="POST" action="index.php">
                             <div class="row">
