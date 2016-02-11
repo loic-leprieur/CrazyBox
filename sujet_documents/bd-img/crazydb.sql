@@ -1,11 +1,71 @@
+-- phpMyAdmin SQL Dump
+-- version 4.1.14
+-- http://www.phpmyadmin.net
+--
+-- Client :  127.0.0.1
+-- Généré le :  Jeu 11 Février 2016 à 11:09
+-- Version du serveur :  5.6.17
+-- Version de PHP :  5.5.12
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8 */;
 
+--
+-- Base de données :  `crazydb`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `cagnotte`
+--
+
+CREATE TABLE IF NOT EXISTS `cagnotte` (
+  `idPochette` int(11) NOT NULL,
+  `montantActuel` double(7,2) NOT NULL DEFAULT '0.00',
+  `atteinte` char(1) NOT NULL,
+  PRIMARY KEY (`idPochette`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `contient`
+--
+
+CREATE TABLE IF NOT EXISTS `contient` (
+  `idPochette` int(11) NOT NULL,
+  `idPrestation` int(11) NOT NULL,
+  `quantite` int(2) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`idPochette`,`idPrestation`),
+  KEY `fk_prestation` (`idPrestation`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `pochette`
+--
+
+CREATE TABLE IF NOT EXISTS `pochette` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nom` text NOT NULL,
+  `message` text NOT NULL,
+  `montant` double(7,2) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `prestation`
+--
 
 CREATE TABLE IF NOT EXISTS `prestation` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -17,6 +77,10 @@ CREATE TABLE IF NOT EXISTS `prestation` (
   PRIMARY KEY (`id`),
   KEY `type` (`type`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=28 ;
+
+--
+-- Contenu de la table `prestation`
+--
 
 INSERT INTO `prestation` (`id`, `nom`, `descr`, `type`, `img`, `prix`) VALUES
 (1, 'Champagne', 'Bouteille de champagne + flutes + jeux à gratter', 1, 'champagne.jpg', '20.00'),
@@ -47,11 +111,21 @@ INSERT INTO `prestation` (`id`, `nom`, `descr`, `type`, `img`, `prix`) VALUES
 (26, 'Planètes Laser', 'Laser game : Gilet électronique et pistolet laser comme matériel, vous voilà équipé.', 2, 'laser.jpg', '15.00'),
 (27, 'Fort Aventure', 'Découvrez Fort Aventure à Bainville-sur-Madon, un site Accropierre unique en Lorraine ! Des Parcours Acrobatiques pour petits et grands, Jeu Mission Aventure, Crypte de Crapahute, Tyrolienne, Saut à l''élastique inversé, Toboggan géant... et bien plus encore.', 2, 'fort.jpg', '25.00');
 
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `type`
+--
+
 CREATE TABLE IF NOT EXISTS `type` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nom` text NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+
+--
+-- Contenu de la table `type`
+--
 
 INSERT INTO `type` (`id`, `nom`) VALUES
 (1, 'Attention'),
@@ -59,7 +133,26 @@ INSERT INTO `type` (`id`, `nom`) VALUES
 (3, 'Restauration'),
 (4, 'Hébergement');
 
+--
+-- Contraintes pour les tables exportées
+--
 
+--
+-- Contraintes pour la table `cagnotte`
+--
+ALTER TABLE `cagnotte`
+  ADD CONSTRAINT `fk_idPochette` FOREIGN KEY (`idPochette`) REFERENCES `pochette` (`id`);
+
+--
+-- Contraintes pour la table `contient`
+--
+ALTER TABLE `contient`
+  ADD CONSTRAINT `fk_prestation` FOREIGN KEY (`idPrestation`) REFERENCES `prestation` (`id`),
+  ADD CONSTRAINT `fk_idPochette2` FOREIGN KEY (`idPochette`) REFERENCES `cagnotte` (`idPochette`);
+
+--
+-- Contraintes pour la table `prestation`
+--
 ALTER TABLE `prestation`
   ADD CONSTRAINT `prestation_ibfk_1` FOREIGN KEY (`type`) REFERENCES `type` (`id`);
 
