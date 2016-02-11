@@ -57,7 +57,7 @@ abstract class VueAbstraite{
 <body>
   <nav class="white" role="navigation">
     <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo">Crazy Box</a>
+      <a id="logo-container" href="" class="brand-logo">Crazy Box</a>
       <ul class="right hide-on-med-and-down">
         <li><a href="pochette">Créer une pochette</a></li>
         <li><a href="catalogue">Catalogue</a></li>
@@ -80,34 +80,32 @@ END;
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
-          <h5 class="white-text">Company Bio</h5>
-          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+          <h5 class="white-text">Qui sommes nous ?</h5>
+          <p class="grey-text text-lighten-4">Créée le 11/02/2016, CrazyBox est une équipe de 6 jeunes développeurs passionnés qui souhaite
+          apporter une solution pratique pour ceux qui offre des cadeaux hors du commun.</p>
 
 
         </div>
         <div class="col l3 s12">
-          <h5 class="white-text">Settings</h5>
+          <h5 class="white-text">Navigation</h5>
           <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
+            <li><a class="white-text" href=" ">Accueil</a></li>
+            <li><a class="white-text" href="pochette">Créer une pochette</a></li>
+            <li><a class="white-text" href="catalogue">Catalogue</a></li>
           </ul>
         </div>
         <div class="col l3 s12">
-          <h5 class="white-text">Connect</h5>
+          <h5 class="white-text">Contact</h5>
           <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
+            <li><p class="white-text">Téléphone : 03-83-40-31-68</p></li>
+            <li><p class="white-text">Adresse : CrazyBox S.A.S.<br>241 Avenue Foch<br>54000 NANCY</p></li>
+            <li><p class="white-text">Siret : 52016981220361</p></li>
           </ul>
         </div>
       </div>
     </div>
     <div class="footer-copyright">
       <div class="container">
-      Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
       </div>
     </div>
   </footer>
