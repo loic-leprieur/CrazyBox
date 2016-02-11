@@ -44,13 +44,8 @@ abstract class VueAbstraite{
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<<<<<<< HEAD
   <link href="$this->racine/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="$this->racine/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-=======
-  <link href="$this->racine" . "css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="$this->racine" . "css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
->>>>>>> 5ddb1d17920f083f70bdd4041dd7719f8b1b13e3
 </head>
 <body>
   <nav class="white" role="navigation">
