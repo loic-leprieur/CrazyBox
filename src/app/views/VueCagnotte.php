@@ -3,6 +3,7 @@
 namespace app\views;
 
 
+use app\models\Cagnotte;
 use app\models\Pochette;
 use app\models\Prestation;
 
@@ -17,9 +18,35 @@ class VueCagnotte extends VueAbstraite
 
         $numpoch = $this->params[0]['idPochette'];
         $nomdest = Pochette::find($numpoch)['nom'];
+		$privee = Pochette::find($numpoch)->privee;
+
+		$cagnotte = Cagnotte::find($numpoch);
+
+
 
         $vue = new VueCatalogue();
-        $prestations = $vue->genererPrestationsCagnotte($numpoch);
+		if($privee == 'non'){
+
+			$prestations = $vue->genererPrestationsCagnotte($numpoch);
+
+		}else{
+
+			$prestations = <<<END
+					<br><br>
+			<h5 class="red-text center-align">Les prestions associées ont été cachées par le créateur de la pochette</h5>
+			<table class="container responsive-table highlight bordered">
+					<thead class="center-align red-text">
+					  <tr>
+						  <th class="center-align"></th>
+						  <th class="center-align"></th>
+					  </tr>
+					</thead>
+
+					<tbody>
+END;
+
+
+		}
 
         $html = <<<END
     	<br><br><br>
@@ -44,7 +71,7 @@ class VueCagnotte extends VueAbstraite
     			    <div id="montCagnotte" class="row">
     			        <h3 class="orange-text text-darken-4 center-align">Surprenez et rendez quelqu'un heureux !</h3>
     			        <br>
-    			        <form class="col s12" method="POST" action="montant">
+    			        <form class="col s12" method="POST" action="$cagnotte->id_url/montant">
     			            <div class="row">
                                 <div class="input-field col s6 offset-s3">
                                     <i class="material-icons prefix">Don</i>
