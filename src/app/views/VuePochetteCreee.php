@@ -20,6 +20,8 @@ class VuePochetteCreee extends VueAbstraite
     }
 
     public function render(){
+    	$url = $this->params['url'];
+    	
     	$html .= <<<END
     	<div class="row">
     		<div class="col s12">
@@ -27,9 +29,10 @@ class VuePochetteCreee extends VueAbstraite
     				Votre pochette surprise a bien été créée.<br>
     				Vous pouvez y accéder en cliquant sur ce lien :
     			</p>
+    			<br>
+    			<a href="/cagnotte/$url">$this->racine/cagnotte/$url</a>
     			
-    		</div>
-    	
+    		</div>    	
     	</div>
 END;
     }
