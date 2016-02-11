@@ -9,12 +9,12 @@
 namespace app\views;
 
 
-class VueAccueil{
+class VueAccueil extends VueGenerale{
 
     public function __construct(){
     }
 
-    public function nonConnecte(){
+    public function render(){
         $html = <<<END
 <!DOCTYPE html>
 <html lang="fr">
@@ -33,14 +33,15 @@ class VueAccueil{
     <div class="nav-wrapper container">
       <a id="logo-container" href="#" class="brand-logo">Logo</a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="prestations">Liste des prestations</a></li>
-        <li><a href="pochettes">Liste des pochettes</a></li>
+        <li><a href="newpochette">Créer pochette</a></li>
+        <li><a href="prestation">Liste des prestations</a></li>
+        <li><a href="pochette">Liste des pochettes</a></li>
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
-        <li><a href=" ">Accueil</a></li>
-        <li><a href="prestations">Liste des prestations</a></li>
-        <li><a href="pochettes">Liste des pochettes</a></li>
+        <li><a href="newpochette">Créer pochette</a></li>
+        <li><a href="prestation">Liste des prestations</a></li>
+        <li><a href="pochette">Liste des pochettes</a></li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>

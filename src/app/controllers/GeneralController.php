@@ -10,8 +10,10 @@ namespace app\controllers;
 use app\views\VueAccueil;
 use app\views\VueGenerale;
 
-class GeneralController{
-    public function __construct(){
+abstract class GeneralController{
+    private $model;
+    public function __construct($m = null){
+
     }
 
     public function accueil(){
