@@ -8,6 +8,7 @@
 
 namespace app\controllers;
 use app\controllers\ControllerAbstrait;
+use app\views\VueGenerale;
 
 /**
  * Class GeneralController appelant la vue correspondant
@@ -25,8 +26,16 @@ class GeneralController extends ControllerAbstrait{
      */
     public function accueil()
     {
+        //affichage du header
+        $vueBase = new VueGenerale();
+        $vueBase->header();
+
+        // affichage du body
         $vue = new VueAccueil();
         $vue->nonConnecte();
+
+        // affichage du footer
+        $vueBase->footer();
     }
 
     /**
