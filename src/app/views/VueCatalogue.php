@@ -105,7 +105,7 @@ END;
 			$prix = $val['prix'];
 
 			$html .= <<<END
-          <tr class="ligneCatalogue" style="height: 50px;">
+          <tr style="height: 50px;">
           	<td class="center-align"><h6>$nom</h6></td>
           	<td class="center-align"><h6>$prix €</h6></td>
           </tr>
@@ -113,6 +113,49 @@ END;
 		}
 
 		$html .= <<<END
+		</tbody>
+</table>
+END;
+
+		return $html;
+
+	}
+	
+	public function genererImage($numPoch) {
+
+		$tabPrestations = Prestation::hydrateRaw("SELECT DISTINCT nom,descr,img FROM prestation INNER JOIN contient ON prestation.id = contient.idPrestation WHERE idPochette = $numPoch")->toArray();
+
+		$html = <<<END
+		<br><br>
+<table class="container responsive-table highlight bordered" id="tabVisu">
+        <thead class="center-align red-text">
+          <tr>
+              <th class="center-align"></th>
+              <th class="center-align"></th>
+			  <th class="center-align"></th>
+          </tr>
+        </thead>
+		<tbody>
+END;
+
+		$id = 1;
+		foreach($tabPrestations as $val) {
+			$nom = $val['nom'];
+			$descr = $val['descr'];
+			$img = $val['img'];
+			$hide = "none";
+			if($id==1) $hide = "table-row";
+			$html .= <<<END
+          <tr style="height: 50px; display:$hide;" id="$id">
+          	<td class="center-align"><h6>$nom</h6></td>
+			<td class="center-align"><img src="$this->racine/images/$img" height="150px" alt="$nom"></td>
+			<td class="center-align"><h6>$descr</h6></td>
+          </tr>
+END;
+$id++;
+		}
+
+		$html.= <<<END
 		</tbody>
 </table>
 END;

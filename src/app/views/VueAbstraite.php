@@ -62,7 +62,6 @@ abstract class VueAbstraite{
       <ul class="right hide-on-med-and-down">
         <li><a class="white-text" href="$this->racine/">Accueil</a></li>
         <li><a class="white-text" href="$this->racine/index.php/pochette">Créer une pochette</a></li>
-        <li><a class="white-text" href="$this->racine/index.php/catalogue">Catalogue</a></li>
       </ul>
 
       <ul id="nav-mobile" class="side-nav pink darken-2">
@@ -70,7 +69,6 @@ abstract class VueAbstraite{
             <a class="white-text" href="$this->racine/">Accueil</a>
         </li>
         <li><a class="white-text" href="$this->racine/index.php/pochette">Créer une pochette</a></li>
-        <li><a class="white-text" href="$this->racine/index.php/catalogue">Catalogue</a></li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons white-text">menu</i></a>
     </div>
@@ -121,12 +119,12 @@ END;
             <li><p class="white-text">Téléphone : 03-83-40-31-68</p></li>
             <li><p class="white-text">Adresse : CrazyBox S.A.S.<br>241 Avenue Foch<br>54000 NANCY</p></li>
           </ul>
-        </div>
       </div>
-      <div class="col l3 s6 pink darken-3 center">
-         <p class="white-text">© Copyright - CrazyBox SAS 2016</p>
-      </div>
+
     </div>
+        <div class="col s12 pink darken-3 center">
+            <p class="white-text">© Copyright - CrazyBox SAS 2016</p>
+        </div>
   </footer>
 
   <!--  Scripts-->
@@ -134,7 +132,7 @@ END;
   <script src="$this->racine/js/materialize.js"></script>
   <script src="$this->racine/js/init.js"></script>
   <script src="$this->racine/js/catalogue.js"></script>
-  <script type="text/javascript" src="$this->racine/js/cagnotte.js">
+  <script src="$this->racine/js/cagnotte.js"></script>
   </body>
 </html>
 END;
