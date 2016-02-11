@@ -1,6 +1,8 @@
-document.getElementById("boutonCagnotte").onclick = function() {
-
-    document.getElementById("prestCagnotte").style.display = "block";
-    document.getElementById("montCagnotte").style.display = "block";
-
+var tab = document.getElementById("tabVisu");
+var i = 1;
+tab.onclick = function () {
+	console.log(this.childNodes[3]);
+	this.childNodes[3].childNodes[i].style.display="none";
+	i+=2;
+	this.childNodes[3].childNodes[i].style.display="table-row";
 };

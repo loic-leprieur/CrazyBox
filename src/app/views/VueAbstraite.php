@@ -131,7 +131,7 @@ END;
   <script src="$this->racine/js/materialize.js"></script>
   <script src="$this->racine/js/init.js"></script>
   <script src="$this->racine/js/catalogue.js"></script>
-  <script type="text/javascript" src="$this->racine/js/cagnotte.js">
+  <script src="$this->racine/js/cagnotte.js"></script>
   </body>
 </html>
 END;
