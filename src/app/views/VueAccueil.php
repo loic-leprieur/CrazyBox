@@ -19,7 +19,7 @@ class VueAccueil extends VueAbstraite{
 	// redeem cadeau
 	// list choix varie
 	// thumb_up pouce vert  credit_card
-	/* Facilite d'utilisation, financement collaboratif, variete du choix, faire plaisir Ã  vos amis, */
+	/* Facilite d'utilisation, financement collaboratif, variete du choix, faire plaisir à vos amis, */
     public function render($content = null){
         $html = <<<END
   <div class="container">
@@ -32,7 +32,7 @@ class VueAccueil extends VueAbstraite{
             <h2 class="center orange-text text-darken-1"><i class="material-icons">redeem</i></h2>
             <h5 class="center">Concevez une pochette surprise</h5>
 
-            <p class="light">Vous avez envie de faire une surprise originale Ã  vos proches ? Vous manquez d'idÃ©es ou de temps ? Laissez-vous tenter par notre CrazyBox et offrez un cadeau peu banal.</p>
+            <p class="light">Vous avez envie de faire une surprise originale à vos proches ? Vous manquez d'idées ou de temps ? Laissez-vous tenter par notre CrazyBox et offrez un cadeau peu banal.</p>
           </div>
         </div>
 
@@ -41,16 +41,16 @@ class VueAccueil extends VueAbstraite{
             <h2 class="center orange-text text-darken-1"><i class="material-icons">shopping_basket</i></h2>
             <h5 class="center">Choisissez vos prestations</h5>
 
-            <p class="light">Naviguez dans notre catalogue et confectionnez votre pochette surprise avec de nombreuses prestations. RÃ©unissez ses activitÃ©s prÃ©fÃ©rÃ©es en un seul cadeau unique. Il y en a pour tous les goÃ»ts !</p>
+            <p class="light">Naviguez dans notre catalogue et confectionnez votre pochette surprise avec de nombreuses prestations. Réunissez ses activités préférées en un seul cadeau unique. Il y en a pour tous les goûts !</p>
           </div>
         </div>
 
         <div class="col s12 m4">
           <div class="icon-block">
             <h2 class="center orange-text text-darken-1"><i class="material-icons">credit_card</i></h2>
-            <h5 class="center">Partagez les coÃ»ts</h5><br>
+            <h5 class="center">Partagez les coûts</h5><br>
 
-            <p class="light ">Une fois votre pochette crÃ©Ã©e, financez-la facilement sur notre plateforme. Avec un simple lien, vos amis pourront remplir la cagnotte. Nous nous occupons du reste afin de vous planifier le dÃ©roulement des activitÃ©s.</p>
+            <p class="light ">Une fois votre pochette créée, financez-la facilement sur notre plateforme. Avec un simple lien, vos amis pourront remplir la cagnotte. Nous nous occupons du reste afin de vous planifier le déroulement des activités.</p>
           </div>
         </div>
       </div>
@@ -76,8 +76,8 @@ class VueAccueil extends VueAbstraite{
         <div class="col s6 offset-s3 center">
           <h3><i class="material-icons medium orange-text text-darken-1 ">stay_current_portrait</i></h3>
           <h4>La CrazyBox vous suit partout</h4>
-          <p class="center-align light">Suivez le dÃ©roulement des prestations sur votre mobile. A chaque fois que vous finissez une activitÃ©,
-		  consultez votre pochette pour dÃ©couvrir la suite de votre cadeau.</p>
+          <p class="center-align light">Suivez le déroulement des prestations sur votre mobile. A chaque fois que vous finissez une activité,
+		  consultez votre pochette pour découvrir la suite de votre cadeau.</p>
         </div>
       </div>
 
@@ -91,7 +91,7 @@ class VueAccueil extends VueAbstraite{
       <div class="container">
         <div class="row center">
 
-             <a href="$this->racine/index.php/pochette" id="download-button" class="btn-large waves-effect waves-light orange text-darken-1">CrÃ©ez votre CrazyBox</a>
+             <a href="$this->racine/index.php/pochette" id="download-button" class="btn-large waves-effect waves-light orange text-darken-1">Créez votre CrazyBox</a>
         </div>
       </div>
     </div>

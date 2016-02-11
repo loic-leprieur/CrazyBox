@@ -66,6 +66,9 @@ abstract class VueAbstraite{
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
+        <li>
+            <a href="$this->racine/">Accueil</a>
+        </li>
         <li><a href="$this->racine/index.php/pochette">Créer une pochette</a></li>
         <li><a href="$this->racine/index.php/catalogue">Catalogue</a></li>
       </ul>
