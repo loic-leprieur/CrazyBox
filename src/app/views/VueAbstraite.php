@@ -47,6 +47,7 @@ abstract class VueAbstraite{
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <link rel="shortcut icon" href="$this->racine/images/favicon.ico" type="images/x-icon">
   <title>CrazyBox</title>
 
   <!-- CSS  -->
@@ -61,7 +62,6 @@ abstract class VueAbstraite{
       <ul class="right hide-on-med-and-down">
         <li><a href="$this->racine/">Accueil</a></li>
         <li><a href="$this->racine/index.php/pochette">Créer une pochette</a></li>
-        <li><a href="$this->racine/index.php/afficher-pochette">Afficher une pochette</a></li>
         <li><a href="$this->racine/index.php/catalogue">Catalogue</a></li>
       </ul>
 
