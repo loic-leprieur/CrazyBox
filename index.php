@@ -27,11 +27,14 @@ $app->get('/pochette', function(){
 	$controller->traiter();
 });
 
-$app->post('/pochette', function(){
-
+$app->post('/pochette/creee', function(){
 	$controller = new app\controllers\PochetteController();
 	$controller->validation();
+});
 
+$app->get('/cagnotte', function(){
+	$controller = new app\controllers\CagnotteController();
+	$controller->traiter();
 });
 
 $app->run();
