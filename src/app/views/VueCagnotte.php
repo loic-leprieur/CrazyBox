@@ -10,6 +10,7 @@ namespace app\views;
 
 
 use app\models\Pochette;
+use app\models\Prestation;
 
 class VueCagnotte extends VueAbstraite
 {
@@ -20,11 +21,11 @@ class VueCagnotte extends VueAbstraite
 
     public function render(){
 
-        $nomdest = Pochette::find($this->params[0]['idPochette'])['nom'];
-
+        $numpoch = $this->params[0]['idPochette'];
+        $nomdest = Pochette::find($numpoch)['nom'];
 
         $vue = new VueCatalogue();
-        //$vue =
+        $prestations = $vue->genererPrestationsCagnotte($numpoch);
 
         $html = <<<END
     	<br><br><br>
@@ -36,15 +37,39 @@ class VueCagnotte extends VueAbstraite
     			<br>
     			<div class="card-panel lighten-2 center-align">
     			    <h5 class="orange-text text-darken-4">Vous souhaitez participer à cette cagnotte pour $nomdest ?</h5>
+                    <br><br>
+    			    <h5 class="center-align">
+    				    <a id="boutonCagnotte" href="#" class="white-text card-panel lighten-2 orange">Cliquez ici</a>
+    			    </h5>
 
-    			    <div class="row">
+    			    <br>
 
+    			    <div id="prestCagnotte" class="row" style="display: none;">
+    			        $prestations
+    			    </div>
+
+    			    <br><br>
+
+    			    <div id="montCagnotte" class="row" style="display: none;">
+    			        <h3 class="orange-text text-darken-4 center-align">Surprenez et rendez quelqu'un heureux !</h3>
+    			        <br>
+    			        <form class="col s12" method="POST" action="cagnotte/montant">
+    			            <div class="row">
+                                <div class="input-field col s6 offset-s3">
+                                    <i class="material-icons prefix">Don</i>
+                                    <input id="icon_prefix3" name="don" type="text" class="validate">
+                                    <label for="icon_prefix3">Don</label>
+                                </div>
+                            </div>
+    			        </form>
     			    </div>
     			</div>
     		</div>
     	</div>
 
     	<br><br><br>
+
+    	<script type="text/javascript" src="$this->racine/js/cagnotte.js">
 END;
 
         return $html;
