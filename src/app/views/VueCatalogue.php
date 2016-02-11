@@ -1,5 +1,6 @@
 <?php
 namespace app\views;
+use app\models\Prestation;
 
 /**
  * Classe qui permet de générer le code HTML relatif au catalogue.
@@ -30,16 +31,22 @@ class VueCatalogue extends VueAbstraite {
 	public function genererListePrestations() {
 		$html = <<<END
 		<br><br>
-<h3 class="orange-text text-darken-4 center-align">Prestations</h3>
+<h3 class="orange-text text-darken-4 center-align col s12">Prestations</h3>
 <table class="container responsive-table highlight bordered">
-        <thead class="center-align red-text">
-          <tr>
-              <th class="center-align"></th>
-              <th class="center-align"></th>
-              <th class="center-align"></th>
-			  <th class="center-align"></th>
-          </tr>
-        </thead>
+        <div class="center-align">
+		 <input type="checkbox" checked id="c_Attention" />
+		<label for="c_Attention" class="red-texte" >Attention</label><br>
+		
+		<input type="checkbox" checked id="c_Activite" />
+		<label for="c_Activite" class="red-texte" >Activités</label><br>
+		
+		<input type="checkbox" checked id="c_Restauration" />
+		<label for="c_Restauration" class="red-texte" >Restauration</label><br>
+		
+		<input type="checkbox" checked id="c_Hebergement" />
+		<label for="c_Hebergement" class="red-texte" >Hébergement</label><br>
+			
+		</div>
 		<tbody>
 END;
 
@@ -48,7 +55,6 @@ END;
 			$nom = $val['nom'];
 			$img = $val['img'];
 			$prix = $val['prix'];
-
 			$html .= <<<END
           <tr class="ligneCatalogue">
           	<td class="center-align"><h4>$nom</h4></td>
@@ -71,5 +77,45 @@ END;
 		
 		return $html;
 	}
-	
+
+	public function genererPrestationsCagnotte($numPoch) {
+
+		$tabPrestations = Prestation::hydrateRaw("SELECT DISTINCT id,nom,img,prix FROM prestation INNER JOIN contient ON prestation.id = contient.idPrestation WHERE idPochette = $numPoch")->toArray();
+
+		$html = <<<END
+		<br><br>
+<h3 class="orange-text text-darken-4 center-align">Prestations associées</h3>
+<table class="container responsive-table highlight bordered">
+        <thead class="center-align red-text">
+          <tr>
+              <th class="center-align"></th>
+              <th class="center-align"></th>
+          </tr>
+        </thead>
+		<tbody>
+END;
+
+		foreach($tabPrestations as $val) {
+			$id = $val['id'];
+			$nom = $val['nom'];
+			$img = $val['img'];
+			$prix = $val['prix'];
+
+			$html .= <<<END
+          <tr class="ligneCatalogue" style="height: 50px;">
+          	<td class="center-align"><h6>$nom</h6></td>
+          	<td class="center-align"><h6>$prix €</h6></td>
+          </tr>
+END;
+		}
+
+		$html .= <<<END
+		</tbody>
+</table>
+END;
+
+		return $html;
+
+	}
+
 }

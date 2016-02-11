@@ -16,14 +16,19 @@ use app\views\VueCatalogue;
 class VuePochette extends VueAbstraite
 {
 
-    public function __construct(){
-        parent::__construct();
+    public function __construct($p=null){
+        parent::__construct($p);
     }
 
     public function render(){
 
+<<<<<<< HEAD
 
         echo '      <h3 class="orange-text text-darken-4 center-align">Informations</h3>
+=======
+        echo '      <br><br>
+                    <h3 class="orange-text text-darken-4 center-align">Informations</h3>
+>>>>>>> origin/master
                     <div class="row">
                         <form class="col s12" method="POST" action="pochette/creee">
                             <div class="row">
@@ -43,8 +48,7 @@ class VuePochette extends VueAbstraite
                             </div>';
 
 
-        $catalogue = new VueCatalogue(Prestation::all()->toArray());
-        echo $catalogue->render();
+		echo $this->params;
 
         echo '  <div class="row center-align">
                     <div class="input-field">
