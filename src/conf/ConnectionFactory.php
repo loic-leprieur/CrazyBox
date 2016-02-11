@@ -18,6 +18,8 @@ class ConnectionFactory {
 	 */
 	private static $connection = null;
 
+	private static $connectionPDO = null;
+
 	/**
 	 * Fonction qui permet de modifier les paramètres de la connection
 	 */
@@ -38,6 +40,17 @@ class ConnectionFactory {
 			self::$connection->bootEloquent();
 		}
 		return self::$connection;	
+	}
+
+
+	public static function makeConnectionPDO(){
+		if (self::$connectionPDO == null) {
+
+			// creation de la connection avec PDO
+			self::$connectionPDO = new \PDO('mysql:host='.static::$config['host'].';dbname='.static::$config['database'], static::$config['username'], static::$config['password']);
+		}
+		return self::$connectionPDO;
+
 	}
 
 }

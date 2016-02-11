@@ -16,6 +16,7 @@ use app\views\VuePochette;
 use conf\ConnectionFactory;
 use Illuminate\Support\Facades\DB;
 use app\views\VuePochetteCreee;
+use Illuminate\Support\Traits\CapsuleManagerTrait;
 
 class PochetteController extends AbstraitController{
     public function __construct($m = null)
@@ -110,19 +111,20 @@ class PochetteController extends AbstraitController{
 
         // insertion dans la table contient
 
+
+        $pdo = ConnectionFactory::makeConnectionPDO();
+
         $idPoch = filter_var($pochette->id, FILTER_SANITIZE_NUMBER_INT);
 
         for($i = 0 ; $i < sizeof($objSelc); $i++){
 
             $idPrest = filter_var($objSelc[$i], FILTER_SANITIZE_NUMBER_INT);
-            Prestation::hydrateRaw("INSERT INTO `contient`(`idPochette`, `idPrestation`) VALUES ($idPoch, $idPrest)");
+            $pdo->exec("INSERT INTO `contient`(`idPochette`, `idPrestation`) VALUES ($idPoch, $idPrest)");
 
         }
 
         $vue = new VuePochetteCreee($cagnotte->toArray());
         $vue->renderBody();
 
-
-        //appeler le render
     }
 }
