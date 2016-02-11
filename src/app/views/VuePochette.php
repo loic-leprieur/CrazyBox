@@ -24,7 +24,7 @@ class VuePochette extends VueAbstraite
 
 
         echo '      <br><br>
-                    <b><h3 class="orange-text darken-4 center-align">Informations</h3></b>
+                    <h3 class="orange-text text-darken-4 center-align">Informations</h3>
                     <div class="row">
                         <form class="col s12" method="POST" action="pochette">
                             <div class="row">
@@ -47,14 +47,20 @@ class VuePochette extends VueAbstraite
         $catalogue = new VueCatalogue(Prestation::all()->toArray());
         echo $catalogue->render();
 
-        echo '    <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
-                  <label for="filled-in-box">Pochette secrète</label>
-
-                  <div class="file-field input-field">
-                    <div class="btn">
-                        <button name="validerPochette" value="valPoch">Valider</button>
+        echo '    <br><br><br>
+                  <div class="row center-align">
+                    <div class="input-field">
+                        <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" style="padding: 0;"/>
+                        <label for="filled-in-box">Pochette Secrète</label>
                     </div>
-                  </div>';
+                    <br>
+                    <div class="input-field">
+                        <button class="btn waves-effect waves-light" type="submit" name="valider">Valider
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </div>
+                  </div>
+                </div>';
 
     }
 
