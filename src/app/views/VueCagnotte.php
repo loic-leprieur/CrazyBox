@@ -56,9 +56,9 @@ class VueCagnotte extends VueAbstraite
     			        <form class="col s12" method="POST" action="cagnotte/montant">
     			            <div class="row">
                                 <div class="input-field col s6 offset-s3">
-                                    <i class="material-icons prefix">Message</i>
-                                    <textarea id="icon_prefix2" name="messagedest" class="materialize-textarea"></textarea>
-                                    <label for="icon_prefix2">Message</label>
+                                    <i class="material-icons prefix">Don</i>
+                                    <input id="icon_prefix3" name="don" type="text" class="validate">
+                                    <label for="icon_prefix3">Don</label>
                                 </div>
                             </div>
     			        </form>
