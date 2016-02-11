@@ -47,7 +47,7 @@ abstract class VueAbstraite{
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-  <title>Crazy Box</title>
+  <title>CrazyBox</title>
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -57,15 +57,15 @@ abstract class VueAbstraite{
 <body>
   <nav class="white" role="navigation">
     <div class="nav-wrapper container">
-      <a id="logo-container" href="" class="brand-logo">Crazy Box</a>
+      <a id="logo-container" href="$this->racine/" class="brand-logo">CrazyBox</a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="pochette">Créer une pochette</a></li>
-        <li><a href="catalogue">Catalogue</a></li>
+        <li><a href="$this->racine/index.php/pochette">Créer une pochette</a></li>
+        <li><a href="$this->racine/index.php/catalogue">Catalogue</a></li>
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
-        <li><a href="pochette">Créer une pochette</a></li>
-        <li><a href="catalogue">Catalogue</a></li>
+        <li><a href="$this->racine/index.php/pochette">Créer une pochette</a></li>
+        <li><a href="$this->racine/index.php/catalogue">Catalogue</a></li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
@@ -89,9 +89,9 @@ END;
         <div class="col l3 s12">
           <h5 class="white-text">Navigation</h5>
           <ul>
-            <li><a class="white-text" href=" ">Accueil</a></li>
-            <li><a class="white-text" href="pochette">Créer une pochette</a></li>
-            <li><a class="white-text" href="catalogue">Catalogue</a></li>
+            <li><a class="white-text" href="$this->racine/">Accueil</a></li>
+            <li><a class="white-text" href="$this->racine/index.php/pochette">Créer une pochette</a></li>
+            <li><a class="white-text" href="$this->racine/index.php/catalogue">Catalogue</a></li>
           </ul>
         </div>
         <div class="col l3 s12">
@@ -99,13 +99,8 @@ END;
           <ul>
             <li><p class="white-text">Téléphone : 03-83-40-31-68</p></li>
             <li><p class="white-text">Adresse : CrazyBox S.A.S.<br>241 Avenue Foch<br>54000 NANCY</p></li>
-            <li><p class="white-text">Siret : 52016981220361</p></li>
           </ul>
         </div>
-      </div>
-    </div>
-    <div class="footer-copyright">
-      <div class="container">
       </div>
     </div>
   </footer>

@@ -80,7 +80,7 @@ class VueAccueil extends VueAbstraite{
     <div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
-          <h4 class="header col s12 orange-text">Imaginez le meilleur // Partagez un moment convivial</h5>
+          <h4 class="header col s12 orange-text">Partagez un moment convivial</h5>
         </div>
       </div>
     </div>
@@ -104,12 +104,12 @@ class VueAccueil extends VueAbstraite{
 
 
   <div class="parallax-container valign-wrapper">
+
     <div class="section no-pad-bot">
+
       <div class="container">
         <div class="row center">
-          <div class="row center">
-          <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light light-green lighten-1">Creez votre CrazyBox</a>
-        </div>
+             <a href="$this->racine/index.php/pochette" id="download-button" class="btn-large waves-effect waves-light orange text-darken-1">Créez votre CrazyBox</a>
         </div>
       </div>
     </div>
