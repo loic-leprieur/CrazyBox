@@ -50,7 +50,7 @@ class VuePochette extends VueAbstraite
         echo '    <br><br><br>
                   <div class="row center-align">
                     <div class="input-field">
-                        <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" style="padding: 0;"/>
+                        <input type="checkbox" class="filled-in" id="filled-in-box" name="pochSecrete" checked="checked" style="padding: 0;"/>
                         <label for="filled-in-box">Pochette Secrète</label>
                     </div>
                     <br>
