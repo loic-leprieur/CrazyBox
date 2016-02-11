@@ -13,7 +13,6 @@ class VueCatalogue extends VueAbstraite {
 	 */
 	public function __construct(array $params = null) {
 		parent::__construct($params);
-		echo $this->racine;
 	}
 
 	/**
@@ -57,7 +56,7 @@ END;
           	<td class="center-align"><h4>$prix €</h4></td>
           	<td class="center-align">
           		<p>
-          			<input class="red-text" type="checkbox" id="$id" name="$id" />
+          			<input class="red-text" type="checkbox" id="$id" name="$id"/>
           			<label for="$id"></label>
           		</p>
           	</td>
