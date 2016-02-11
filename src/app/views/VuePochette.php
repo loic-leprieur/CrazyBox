@@ -21,11 +21,6 @@ class VuePochette extends VueAbstraite
     }
 
     public function render(){
-
-<<<<<<< HEAD
-
-        echo '      <h3 class="orange-text text-darken-4 center-align">Informations</h3>
-=======
         echo '      <br><br>
                     <h3 class="orange-text text-darken-4 center-align">Informations</h3>
 >>>>>>> origin/master
