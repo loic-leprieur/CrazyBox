@@ -9,9 +9,10 @@
 namespace src\app\views;
 
 
-use app\views\VueGenerale;
+use app\views\VueAbstraite;
+use app\vue\VueCatalogue;
 
-class VuePochette extends VueGenerale
+class VuePochette extends VueAbstraite
 {
 
 
@@ -19,35 +20,31 @@ class VuePochette extends VueGenerale
     function render(){
 
 
-        $html = ' <div class="row">
-                        <div class="col s12">Création d\'une pochette</div>
-                        <div class="col s6">Nom du destinataire : </div>
-                        <div class="col s6"><input type="text" name="nomdest"/></div>
-                        <div class="col s6">Dites lui quelques mots... : </div>
-                        <div class="col s6"><input type="text" id="champMess" name="messagedest"/></div>
-                        <div class="col s6">Dites lui quelques mots... : </div>
-                        <div class="col s6"><input type="text" name="messagedest"/></div>
+        echo ' <div class="row">
+                        <form class="col s12" method="POST" action="index.php">
+                            <div class="row"></div>
+                                <div class="col s12">Création d\'une pochette</div>
+                            <div class="col s6">Nom du destinataire : </div>
+                            <div class="col s6"><input type="text" name="nomdest"/></div>
+                            <div class="col s6">Dites lui quelques mots... : </div>
+                            <div class="col s6"><input type="text" id="champMess" name="messagedest"/></div>
+                        </form>
+
+                  </div>';
 
 
+        $catalogue = new VueCatalogue();
+        echo $catalogue->render();
 
-
-
-
-
-
-
-
-
-
-
-
-
-        ';
 
 
 
 
     }
+
+
+
+
 
 
 
