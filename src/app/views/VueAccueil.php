@@ -12,6 +12,7 @@ namespace app\views;
 class VueAccueil extends VueAbstraite{
 
     public function __construct(){
+		parent::__construct();
     }
 
     public function render($content = null){
