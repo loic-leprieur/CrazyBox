@@ -51,7 +51,7 @@ class VuePochette extends VueAbstraite
                     </div>
                     <br>
                     <div class="input-field">
-                        <button class="btn waves-effect waves-light" type="submit" name="valider">Valider
+                        <button class="btn waves-effect waves-light orange" type="submit" name="valider">Valider
                             <i class="material-icons right">send</i>
                         </button>
                     </div>
