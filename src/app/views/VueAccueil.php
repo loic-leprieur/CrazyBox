@@ -18,7 +18,7 @@ class VueAccueil extends VueAbstraite{
 	//stay_current_portrait telephone portable
 	// redeem cadeau
 	// list choix varie
-	// thumb_up pouce vert
+	// thumb_up pouce vert  credit_card
 	/* Facilite d'utilisation, financement collaboratif, variete du choix, faire plaisir à vos amis, */
     public function render($content = null){
         $html = <<<END
@@ -29,7 +29,7 @@ class VueAccueil extends VueAbstraite{
         <h1 class="header center red-text text-darken-4 ">Crazy Box</h1>
 		
         <div class="row center">
-          <h4 class="header col s12 orange-text text-darken-1">Concevez, financez et partagez une expérience originale</h5>
+          <h4 class="header col s12 pink-text text-lighten-1">Concevez, financez et partagez une expérience originale</h5>
         </div>
         <br><br>
 
@@ -46,28 +46,28 @@ class VueAccueil extends VueAbstraite{
       <div class="row">
         <div class="col s12 m4">
           <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
-            <h5 class="center">Speeds up development</h5>
+            <h2 class="center orange-text text-darken-1"><i class="material-icons">redeem</i></h2>
+            <h5 class="center">Concevez une pochette surprise</h5>
 
-            <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
+            <p class="light">Vous avez envie de faire une surprise originale à vos proches ? Vous manquez d'idée ou de temps ? Laissez-vous tenter par notre CrazyBox et offrez un cadeau peu banal.</p>
           </div>
         </div>
 
         <div class="col s12 m4">
           <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">group</i></h2>
-            <h5 class="center">User Experience Focused</h5>
+            <h2 class="center orange-text text-darken-1"><i class="material-icons">shopping_basket</i></h2>
+            <h5 class="center">Choisissez vos prestations</h5>
 
-            <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
+            <p class="light">Naviguez dans notre catalogue, et confectionnez votre pochette surprise avec plusieurs prestations. Réunissez ses activités préférés en un seul cadeau avec ce qui lui correspondra le mieux. Il y en a pour tous les goûts: Culturel, Cinéphile, Gastronôme.</p>
           </div>
         </div>
 
         <div class="col s12 m4">
           <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
-            <h5 class="center">Easy to work with</h5>
+            <h2 class="center orange-text text-darken-1"><i class="material-icons">credit_card</i></h2>
+            <h5 class="center">Partagez les coûts</h5><br>
 
-            <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
+            <p class="light ">Une fois votre projet crée, financez le facilement sur notre plateforme. Avec un simple lien, vos amis pourront remplir la cagnotte. Nous nous occupons du reste afin de vous planifier le déroulement des activités.</p>
           </div>
         </div>
       </div>
@@ -80,21 +80,22 @@ class VueAccueil extends VueAbstraite{
     <div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
-          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+          <h4 class="header col s12 orange-text">Imaginez le meilleur // Partagez un moment convivial</h5>
         </div>
       </div>
     </div>
-    <div class="parallax"><img src="$this->racine/images/banniereEtoile.png" alt="Unsplashed background img 2"></div>
+    <div class="parallax"><img src="$this->racine/images/banniereResto.jpg" alt="Unsplashed background img 2"></div>
   </div>
 
   <div class="container">
     <div class="section">
 
       <div class="row">
-        <div class="col s12 center">
-          <h3><i class="mdi-content-send brown-text"></i></h3>
-          <h4>Contact Us</h4>
-          <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
+        <div class="col s6 offset-s3 center">
+          <h3><i class="material-icons medium orange-text text-darken-1 ">stay_current_portrait</i></h3>
+          <h4>La CrazyBox vous suit partout</h4>
+          <p class="center-align light">Suivez le déroulement des prestations sur votre mobile. A chaque fois que vous finissez une activités
+		  consultez votre pochette pour découvrir la suite de votre cadeau.</p>
         </div>
       </div>
 
@@ -106,15 +107,15 @@ class VueAccueil extends VueAbstraite{
     <div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
-          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+          <div class="row center">
+          <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light light-green lighten-1">Creez votre CrazyBox</a>
+        </div>
         </div>
       </div>
     </div>
-    <div class="parallax"><img src="$this->racine/images/banniereResto.jpg" alt="Unsplashed background img 3"></div>
+    <div class="parallax"><img src="$this->racine/images/asupr2.jpg" alt="Unsplashed background img 3"></div>
   </div>
-  <div class="row center">
-          <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light light-green lighten-1">Get Started</a>
-        </div>
+  
   
 END;
         echo $html;

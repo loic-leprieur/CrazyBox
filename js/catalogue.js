@@ -4,7 +4,9 @@
 
 var elements = document.getElementsByClassName("ligneCatalogue");
 for(var i = 0; i < elements.length; i++) {
+
     elements[i].onclick = function () {
+
         if(this.childNodes[7].childNodes[1].childNodes[1].getAttribute("checked") == null) {
             this.style.border = "solid";
             this.style.borderColor = "red";
@@ -19,4 +21,7 @@ for(var i = 0; i < elements.length; i++) {
         }
         //this.childNodes[4].childNodes[1].childNodes[1].setAttribute("checked", "checked");
     };
+
+
+    //elements[i].childNodes[7].childNodes[1].childNodes[3].onclick = changementAffichage;
 }

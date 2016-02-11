@@ -76,7 +76,7 @@ END;
     }
     public function footer(){
         $html = <<<END
-<footer class="page-footer teal">
+<footer class="page-footer pink darken-2">
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
