@@ -5,7 +5,7 @@ namespace app\models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class prestation qui représente le modèle de la table prestation de la base de données
+ * Class PrestationModel qui représente le modèle de la table "prestation" de la base de données
  * @package app\models
  */
 class PrestationModel extends Model {

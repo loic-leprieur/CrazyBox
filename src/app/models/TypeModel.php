@@ -5,7 +5,7 @@ namespace app\models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class prestation qui représente le modèle de la table prestation de la base de données
+ * Class TypeModel qui représente le modèle de la table "type" de la base de données
  * @package app\models
  */
 class TypeModel extends Model {
