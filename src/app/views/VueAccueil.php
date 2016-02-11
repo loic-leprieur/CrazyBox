@@ -22,23 +22,6 @@ class VueAccueil extends VueAbstraite{
 	/* Facilite d'utilisation, financement collaboratif, variete du choix, faire plaisir à vos amis, */
     public function render($content = null){
         $html = <<<END
-		<div id="index-banner" class="parallax-container">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <br><br>
-        <h1 class="header center red-text text-darken-4 ">Crazy Box</h1>
-		
-        <div class="row center">
-          <h4 class="header col s12 pink-text text-lighten-1">Concevez, financez et partagez une expérience originale</h5>
-        </div>
-        <br><br>
-
-      </div>
-    </div>
-    <div class="parallax"><img src="$this->racine/images/roseEspoir.jpg"></div>
-  </div>
-
-
   <div class="container">
     <div class="section">
 
@@ -75,7 +58,6 @@ class VueAccueil extends VueAbstraite{
     </div>
   </div>
 
-
   <div class="parallax-container valign-wrapper">
     <div class="section no-pad-bot">
       <div class="container">
@@ -102,7 +84,6 @@ class VueAccueil extends VueAbstraite{
     </div>
   </div>
 
-
   <div class="parallax-container valign-wrapper">
 
     <div class="section no-pad-bot">
@@ -115,8 +96,6 @@ class VueAccueil extends VueAbstraite{
     </div>
     <div class="parallax"><img src="$this->racine/images/asupr2.jpg" alt="Unsplashed background img 3"></div>
   </div>
-  
-  
 END;
         echo $html;
     }
