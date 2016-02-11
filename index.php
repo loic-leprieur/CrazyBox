@@ -32,8 +32,8 @@ $app->post('/pochette/creee', function(){
 	$controller->validation();
 });
 
-$app->get('/cagnotte', function(){
-	$controller = new app\controllers\CagnotteController();
+$app->get('/cagnotte/:id', function($id){
+	$controller = new app\controllers\CagnotteController($id);
 	$controller->traiter();
 });
 
