@@ -15,6 +15,7 @@ use app\views\VueAccueil;
 use app\views\VuePochette;
 use conf\ConnectionFactory;
 use Illuminate\Support\Facades\DB;
+use app\views\VuePochetteCreee;
 
 class PochetteController extends AbstraitController{
     public function __construct($m = null)
@@ -99,12 +100,12 @@ class PochetteController extends AbstraitController{
 
         //creation de la cagnote
 
-        $cagnote = new Cagnotte();
-        $cagnote->idPochette = $pochette->id;
-        $cagnote->montantActuel = 0;
-        $cagnote->atteinte = 'n';
-        $cagnote->id_url = uniqid();
-        $cagnote->save();
+        $cagnotte = new Cagnotte();
+        $cagnotte->idPochette = $pochette->id;
+        $cagnotte->montantActuel = 0;
+        $cagnotte->atteinte = 'n';
+        $cagnotte->id_url = uniqid();
+        $cagnotte->save();
 
 
         // insertion dans la table contient
@@ -118,7 +119,8 @@ class PochetteController extends AbstraitController{
 
         }
 
-        echo "Ok!";
+        $vue = new VuePochetteCreee($cagnotte->toArray());
+        $vue->renderBody();
 
 
         //appeler le render

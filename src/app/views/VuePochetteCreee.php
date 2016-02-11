@@ -15,14 +15,14 @@ use app\views\VueAbstraite;
 class VuePochetteCreee extends VueAbstraite
 {
 
-    public function __construct(){
-        parent::__construct();
+    public function __construct($params){
+        parent::__construct($params);
     }
 
     public function render(){
-    	$url = $this->params['url'];
-    	
-    	$html .= <<<END
+    	$host = $_SERVER['HTTP_HOST'];
+    	$url = $this->params['id_url'];
+    	$html = <<<END
     	<div class="row">
     		<div class="col s12">
     			<p class="center-align pink-text text-darken-3">
@@ -30,11 +30,13 @@ class VuePochetteCreee extends VueAbstraite
     				Vous pouvez y accéder en cliquant sur ce lien :
     			</p>
     			<br>
-    			<h4 class="center-align"><a href="/cagnotte/$url" class="orange-text text-darken-4">$this->racine/cagnotte/$url</a></h4>
+    			<h4 class="center-align"><a href="$this->racine/cagnotte/$url" class="orange-text text-darken-4">$host$this->racine/cagnotte/$url</a></h4>
     			
     		</div>    	
     	</div>
 END;
+    	
+    	return $html;
     }
 
 
