@@ -17,8 +17,12 @@ use app\views\VueGenerale;
  * @package app\controllers
  */
 abstract class AbstraitController{
+
     private $model;
+
     public function __construct($m = null){
         $this->model = $m;
     }
+
+    abstract protected function traiter();
 }

@@ -14,15 +14,6 @@ class CatalogueController extends ControllerAbstrait {
 	 * Constructeur vide d'un controleur de catalogue.
 	 */
 	public function __construct() {}
-
-	/**
-	 * Methode affichant la liste des types de prestations possibles
-	 */
-	public function afficherMenu() {
-		$catalogue = Type::all()->toArray();
-		$vue = new Vue\VueCatalogue($catalogue);
-		$vue->render(1);
-	}
 	
 	/**
 	 * Methode affichant la liste des prestations de type choisi.
@@ -36,6 +27,13 @@ class CatalogueController extends ControllerAbstrait {
 								->toArray();
 			$vue = new Vue\VueCatalogue($prest);
 			$vue->render(2);
+	}
+
+	public function traiter() {
+
+		$vue = new VueCatalogue();
+		$vue->render();
+
 	}
 	
 }

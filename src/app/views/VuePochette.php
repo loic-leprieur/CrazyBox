@@ -17,28 +17,38 @@ class VuePochette extends VueAbstraite
 
 
 
-    function render(){
+    function render($content){
 
 
         echo ' <div class="row">
                         <form class="col s12" method="POST" action="index.php">
-                            <div class="row"></div>
-                                <div class="col s12">Création d\'une pochette</div>
-                            <div class="col s6">Nom du destinataire : </div>
-                            <div class="col s6"><input type="text" name="nomdest"/></div>
-                            <div class="col s6">Dites lui quelques mots... : </div>
-                            <div class="col s6"><input type="text" id="champMess" name="messagedest"/></div>
-                        </form>
+                            <div class="row">
 
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix">Nom du destinataire</i>
+                                    <input id="icon_prefix" type="text" class="validate">
+                                    <label for="icon_prefix">Nom du destinataire</label>
+                                </div>
+
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix">Message</i>
+                                    <input id="icon_telephone" type="tel" class="validate">
+                                    <label for="icon_prefix2">Message</label>
+                                </div>
+                            </div>';
+
+
+        //$catalogue = new VueCatalogue();
+        //echo $catalogue->render();
+
+        echo '    <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
+                  <label for="filled-in-box">Pochette secrète</label>
+
+                  <div class="file-field input-field">
+                    <div class="btn">
+                        <button name="validerPochette" value="valPoch">Valider</button>
+                    </div>
                   </div>';
-
-
-        $catalogue = new VueCatalogue();
-        echo $catalogue->render();
-
-
-
-
 
     }
 

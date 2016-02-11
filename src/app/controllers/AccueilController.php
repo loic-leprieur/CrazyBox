@@ -11,6 +11,7 @@ use app\controllers\AbstraitController;
 use app\views\VueAccueil;
 
 class AccueilController extends AbstraitController{
+
     public function __construct($m = null){
         parent::__construct($m);
     }
@@ -19,7 +20,7 @@ class AccueilController extends AbstraitController{
      * fonction appelant la vue de la
      * page d'accueil
      */
-    public function render(){
+    public function traiter(){
         //affichage du header
         $vue = new VueAccueil();
 

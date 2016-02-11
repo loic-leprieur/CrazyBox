@@ -15,17 +15,17 @@ $app = new \Slim\Slim();
 
 $app->get('/', function(){
 	$controller = new app\controllers\AccueilController();
-	$controller->render();
+	$controller->traiter();
 });
 
 $app->get('/pochette', function(){
 	$controller = new app\controllers\PochetteController();
-	$controller->render();
+	$controller->traiter();
 });
 
 $app->get('/catalogue', function(){
 	$controller = new app\controllers\CatalogueController();
-	$controller->afficherMenu();
+	$controller->traiter();
 });
 
 $app->get('/catalogue/attention', function(){

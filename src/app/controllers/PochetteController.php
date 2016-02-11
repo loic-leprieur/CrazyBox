@@ -8,6 +8,7 @@
 
 namespace app\controllers;
 use app\controllers\AbstraitController;
+use src\app\views\VuePochette;
 
 class PochetteController extends AbstraitController{
     public function __construct($m = null)
@@ -19,17 +20,9 @@ class PochetteController extends AbstraitController{
      * fonction appleant la vue de la page
      * pochette
      */
-    public function render()
-    {
+    public function traiter(){
         //affichage du header
-        $vueBase = new VueGenerale();
-        $vueBase->header();
-
-        // affichage body
         $vue = new VuePochette();
         $vue->render();
-
-        // affichage du footer
-        $vueBase->footer();
     }
 }

@@ -16,6 +16,7 @@ use app\views\VueGenerale;
  * @package app\views
  */
 abstract class VueAbstraite{
+
     private $params;
     protected $racine;
 
@@ -29,6 +30,7 @@ abstract class VueAbstraite{
         echo $this->render();
         echo $this->footer();
     }
+
     public abstract function render();
 
     public function header(){
