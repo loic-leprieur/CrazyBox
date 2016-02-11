@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
  * Class prestation qui représente le modèle de la table prestation de la base de données
  * @package app\models
  */
-class prestation extends Model {
+class PrestationModel extends Model {
 
     /**
      * Table prestation de la base de données
