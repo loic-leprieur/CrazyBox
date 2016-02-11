@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Bertrand
- * Date: 11/02/2016
- * Time: 18:11
- */
 
 namespace app\views;
 
@@ -53,13 +47,21 @@ class VueCagnotte extends VueAbstraite
     			    <div id="montCagnotte" class="row" style="display: none;">
     			        <h3 class="orange-text text-darken-4 center-align">Surprenez et rendez quelqu'un heureux !</h3>
     			        <br>
-    			        <form class="col s12" method="POST" action="cagnotte/montant">
+    			        <form class="col s12" method="POST" action="montant">
     			            <div class="row">
                                 <div class="input-field col s6 offset-s3">
                                     <i class="material-icons prefix">Don</i>
                                     <input id="icon_prefix3" name="don" type="text" class="validate">
                                     <label for="icon_prefix3">Don</label>
                                 </div>
+
+								<br>
+
+                                <div class="input-field">
+                        			<button class="btn waves-effect waves-light" type="submit" name="valider">Valider
+                            			<i class="material-icons right">send</i>
+                        			</button>
+                    			</div>
                             </div>
     			        </form>
     			    </div>
@@ -68,8 +70,6 @@ class VueCagnotte extends VueAbstraite
     	</div>
 
     	<br><br><br>
-
-    	<script type="text/javascript" src="$this->racine/js/cagnotte.js">
 END;
 
         return $html;
