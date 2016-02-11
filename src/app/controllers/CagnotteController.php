@@ -36,14 +36,13 @@ class CagnotteController extends AbstraitController
     public function finaliserCagnotte(){
 
 
-
-        var_dump($_POST);
         $cagnotte = Cagnotte::where("id_url","=",$this->id)->get()[0];
         $pochette = Pochette::find($cagnotte->idPochette);
 
 
         $cagnotte->montantActuel += filter_var($_POST['don'], FILTER_SANITIZE_NUMBER_INT);
         $cagnotte->save();
+
 
         if($cagnotte->montantActuel >= $pochette->montant){
 
@@ -58,7 +57,8 @@ class CagnotteController extends AbstraitController
 
         }else{
 
-
+            $vue = new VueCagnotte(Cagnotte::where("id_url","=",$this->id)->get()->toArray());
+            $vue->renderBody();
 
 
         }

@@ -11,7 +11,7 @@ use app\controllers\AbstraitController;
 use app\models\Cagnotte;
 use app\models\Pochette;
 use app\models\Prestation;
-use app\views\VueAccueil;
+use app\views\VueErreur;
 use app\views\VuePochette;
 use conf\ConnectionFactory;
 use Illuminate\Support\Facades\DB;
@@ -81,17 +81,12 @@ class PochetteController extends AbstraitController{
 
         if(sizeof($objSelc) < 3){
 
-
-            echo "Pas bon !!!!!";
-            exit;
-            //header("location:/pochette");
+			$vue = new VueErreur();
+			$vue->renderBody();
 
         }
-
+        else {
         //recuperation de la coche secrete
-
-
-
 
         //creation de la pochette
 
@@ -139,6 +134,6 @@ class PochetteController extends AbstraitController{
 
         $vue = new VuePochetteCreee($cagnotte->toArray());
         $vue->renderBody();
-
+        }
     }
 }

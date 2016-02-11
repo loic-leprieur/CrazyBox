@@ -19,6 +19,7 @@ class VueCagnotte extends VueAbstraite
         $numpoch = $this->params[0]['idPochette'];
         $nomdest = Pochette::find($numpoch)['nom'];
 		$privee = Pochette::find($numpoch)->privee;
+		$pochette = Pochette::find($numpoch);
 
 		$cagnotte = Cagnotte::find($numpoch);
 
@@ -70,6 +71,8 @@ END;
 
     			    <div id="montCagnotte" class="row">
     			        <h3 class="orange-text text-darken-4 center-align">Surprenez et rendez quelqu'un heureux !</h3>
+    			        <br>
+    			        	 <h5 class="orange-text text-darken-4 center-align">Montant total de la pochette : $pochette->montant €.   Montant actuel de la cagnotte : $cagnotte->montantActuel €. </h3>
     			        <br>
     			        <form class="col s12" method="POST" action="$cagnotte->id_url/montant">
     			            <div class="row">
