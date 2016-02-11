@@ -59,7 +59,9 @@ abstract class VueAbstraite{
     <div class="nav-wrapper container">
       <a id="logo-container" href="$this->racine/" class="brand-logo">CrazyBox</a>
       <ul class="right hide-on-med-and-down">
+        <li><a href="$this->racine/">Accueil</a></li>
         <li><a href="$this->racine/index.php/pochette">Créer une pochette</a></li>
+        <li><a href="$this->racine/index.php/afficher-pochette">Afficher une pochette</a></li>
         <li><a href="$this->racine/index.php/catalogue">Catalogue</a></li>
       </ul>
 
@@ -98,7 +100,7 @@ END;
         <div class="col l6 s12">
           <h5 class="white-text">Qui sommes nous ?</h5>
           <p class="grey-text text-lighten-4">Créée le 11/02/2016, CrazyBox est une start-up de développeurs passionnés qui souhaitent
-          apporter une solution pratique pour offrir aux.</p>
+          apporter une solution pratique de cadeaux pour organiser des évènements réussis.</p>
 
 
         </div>
@@ -119,7 +121,7 @@ END;
         </div>
       </div>
       <div class="col l3 s6 pink darken-3 center">
-         © Copyright - CrazyBox SAS 2016
+         <p class="white-text">© Copyright - CrazyBox SAS 2016</p>
       </div>
     </div>
   </footer>

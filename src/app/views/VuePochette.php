@@ -23,8 +23,7 @@ class VuePochette extends VueAbstraite
     public function render(){
 
 
-        echo '      <br><br>
-                    <h3 class="orange-text text-darken-4 center-align">Informations</h3>
+        echo '      <h3 class="orange-text text-darken-4 center-align">Informations</h3>
                     <div class="row">
                         <form class="col s12" method="POST" action="pochette/creee">
                             <div class="row">
@@ -47,8 +46,7 @@ class VuePochette extends VueAbstraite
         $catalogue = new VueCatalogue(Prestation::all()->toArray());
         echo $catalogue->render();
 
-        echo '    <br><br><br>
-                  <div class="row center-align">
+        echo '  <div class="row center-align">
                     <div class="input-field">
                         <input type="checkbox" class="filled-in" id="filled-in-box" name="pochSecrete" checked="checked" style="padding: 0;"/>
                         <label for="filled-in-box">Pochette Secrète</label>
