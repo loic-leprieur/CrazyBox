@@ -27,4 +27,11 @@ $app->get('/pochette', function(){
 	$controller->traiter();
 });
 
+$app->post('/pochette', function(){
+
+	$controller = new app\controllers\PochetteController();
+	$controller->validation();
+
+});
+
 $app->run();
