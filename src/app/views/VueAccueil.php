@@ -84,7 +84,7 @@ class VueAccueil extends VueAbstraite{
         </div>
       </div>
     </div>
-    <div class="parallax"><img src="$this->racine/images/banniereResto.jpg" alt="Unsplashed background img 2"></div>
+    <div class="parallax"><img src="$this->racine/images/restaurant.jpg" width=1000 alt="Unsplashed background img 2"></div>
   </div>
 
   <div class="container">
