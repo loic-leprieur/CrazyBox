@@ -8,6 +8,8 @@ class VueCagnotteAtteinte extends VueAbstraite
 
     public function __construct($params){
         parent::__construct($params);
+
+
     }
 
     public function render(){
