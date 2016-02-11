@@ -25,7 +25,7 @@ class PochetteController extends AbstraitController{
         $vueBase = new VueGenerale();
         $vueBase->header();
 
-        // affcichage body
+        // affichage body
         $vue = new VuePochette();
         $vue->render();
 
