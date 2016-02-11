@@ -26,7 +26,7 @@ class VuePochette extends VueAbstraite
         echo '      <br><br>
                     <h3 class="orange-text text-darken-4 center-align">Informations</h3>
                     <div class="row">
-                        <form class="col s12" method="POST" action="pochette">
+                        <form class="col s12" method="POST" action="pochette/creee">
                             <div class="row">
                                 <div class="input-field col s6 offset-s3">
                                     <i class="material-icons prefix">Nom du destinataire</i>
