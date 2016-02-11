@@ -9,8 +9,9 @@
 namespace app\views;
 
 
+use app\models\Prestation;
 use app\views\VueAbstraite;
-use app\vue\VueCatalogue;
+use app\views\VueCatalogue;
 
 class VuePochette extends VueAbstraite
 {
@@ -40,8 +41,8 @@ class VuePochette extends VueAbstraite
                             </div>';
 
 
-        //$catalogue = new VueCatalogue();
-        //echo $catalogue->render();
+        $catalogue = new VueCatalogue(Prestation::all()->toArray());
+        echo $catalogue->render();
 
         echo '    <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
                   <label for="filled-in-box">Pochette secrète</label>
