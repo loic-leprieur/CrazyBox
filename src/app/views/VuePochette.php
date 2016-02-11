@@ -26,11 +26,11 @@ class VuePochette extends VueAbstraite
         echo '      <br><br>
                     <b><h3 class="orange-text darken-4 center-align">Informations</h3></b>
                     <div class="row">
-                        <form class="col s12" method="POST" action="index.php">
+                        <form class="col s12" method="POST" action="pochette">
                             <div class="row">
                                 <div class="input-field col s6 offset-s3">
                                     <i class="material-icons prefix">Nom du destinataire</i>
-                                    <input id="icon_prefix" type="text" class="validate">
+                                    <input id="icon_prefix" name="nomdest" type="text" class="validate">
                                     <label for="icon_prefix">Nom du destinataire</label>
                                 </div>
                             </div>
@@ -38,7 +38,7 @@ class VuePochette extends VueAbstraite
                             <div class="row">
                                 <div class="input-field col s6 offset-s3">
                                     <i class="material-icons prefix">Message</i>
-                                    <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+                                    <textarea id="icon_prefix2" name="messagedest" class="materialize-textarea"></textarea>
                                     <label for="icon_prefix2">Message</label>
                                 </div>
                             </div>';
