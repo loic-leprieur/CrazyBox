@@ -21,4 +21,6 @@ abstract class VueAbstraite{
     public function __construct($p){
         $this->params = $p;
     }
+
+    public abstract function render($content);
 }

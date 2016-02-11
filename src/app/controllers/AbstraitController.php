@@ -16,7 +16,7 @@ use app\views\VueGenerale;
  * de la page en html
  * @package app\controllers
  */
-abstract class ControllerAbstrait{
+abstract class AbstraitController{
     private $racine;
 
     public function __construct($m = null){
