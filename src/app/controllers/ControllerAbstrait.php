@@ -10,7 +10,7 @@ namespace app\controllers;
 use app\views\VueAccueil;
 use app\views\VueGenerale;
 
-abstract class Controller{
+abstract class ControllerAbstrait{
     private $model;
     private $racine;
 

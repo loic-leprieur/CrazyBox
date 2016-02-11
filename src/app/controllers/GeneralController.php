@@ -7,10 +7,9 @@
  */
 
 namespace app\controllers;
+use app\controllers\ControllerAbstrait;
 
-
-class GeneralController extends Controller
-{
+class GeneralController extends ControllerAbstrait{
     public function __construct($m)
     {
         parent::__construct($m);
