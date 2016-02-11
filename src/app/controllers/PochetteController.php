@@ -19,7 +19,7 @@ class PochetteController extends AbstraitController{
      * fonction appleant la vue de la page
      * pochette
      */
-    public function pochette()
+    public function render()
     {
         //affichage du header
         $vueBase = new VueGenerale();
