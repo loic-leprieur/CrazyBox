@@ -16,12 +16,11 @@ use app\views\VueCatalogue;
 class VuePochette extends VueAbstraite
 {
 
-    public function __construct(){
-        parent::__construct();
+    public function __construct($p=null){
+        parent::__construct($p);
     }
 
     public function render(){
-
 
         echo '      <br><br>
                     <h3 class="orange-text text-darken-4 center-align">Informations</h3>
@@ -44,8 +43,7 @@ class VuePochette extends VueAbstraite
                             </div>';
 
 
-        $catalogue = new VueCatalogue(Prestation::all()->toArray());
-        echo $catalogue->render();
+		echo $this->params;
 
         echo '    <br><br><br>
                   <div class="row center-align">

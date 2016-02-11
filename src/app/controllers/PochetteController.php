@@ -16,6 +16,7 @@ use app\views\VuePochette;
 use conf\ConnectionFactory;
 use Illuminate\Support\Facades\DB;
 use app\views\VuePochetteCreee;
+use app\views\VueCatalogue;
 use Illuminate\Support\Traits\CapsuleManagerTrait;
 
 class PochetteController extends AbstraitController{
@@ -30,7 +31,10 @@ class PochetteController extends AbstraitController{
      */
     public function traiter(){
         //affichage du header
-        $vue = new VuePochette();
+		$cata = new VueCatalogue(Prestation::orderBy('prix', 'ASC')->get()->toArray());
+		
+		$cata = $cata->render();
+        $vue = new VuePochette($cata);
         $vue->renderBody();
     }
 
@@ -122,7 +126,7 @@ class PochetteController extends AbstraitController{
             $pdo->exec("INSERT INTO `contient`(`idPochette`, `idPrestation`) VALUES ($idPoch, $idPrest)");
 
         }
-
+		
         $vue = new VuePochetteCreee($cagnotte->toArray());
         $vue->renderBody();
 

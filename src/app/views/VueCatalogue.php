@@ -30,16 +30,22 @@ class VueCatalogue extends VueAbstraite {
 	public function genererListePrestations() {
 		$html = <<<END
 		<br><br>
-<h3 class="orange-text text-darken-4 center-align">Prestations</h3>
+<h3 class="orange-text text-darken-4 center-align col s12">Prestations</h3>
 <table class="container responsive-table highlight bordered">
-        <thead class="center-align red-text">
-          <tr>
-              <th class="center-align"></th>
-              <th class="center-align"></th>
-              <th class="center-align"></th>
-			  <th class="center-align"></th>
-          </tr>
-        </thead>
+        <div class="center-align">
+		 <input type="checkbox" checked id="c_Attention" />
+		<label for="c_Attention" class="red-texte" >Attention</label><br>
+		
+		<input type="checkbox" checked id="c_Activite" />
+		<label for="c_Activite" class="red-texte" >Activités</label><br>
+		
+		<input type="checkbox" checked id="c_Restauration" />
+		<label for="c_Restauration" class="red-texte" >Restauration</label><br>
+		
+		<input type="checkbox" checked id="c_Hebergement" />
+		<label for="c_Hebergement" class="red-texte" >Hébergement</label><br>
+			
+		</div>
 		<tbody>
 END;
 
@@ -48,7 +54,6 @@ END;
 			$nom = $val['nom'];
 			$img = $val['img'];
 			$prix = $val['prix'];
-
 			$html .= <<<END
           <tr class="ligneCatalogue">
           	<td class="center-align"><h4>$nom</h4></td>
