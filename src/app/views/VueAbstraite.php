@@ -25,7 +25,7 @@ abstract class VueAbstraite{
         $this->racine = $_SERVER['SCRIPT_NAME'];
     }
 
-    public function renderBody($content){
+    public function renderBody(){
         echo $this->header();
         echo $this->render();
         echo $this->footer();
