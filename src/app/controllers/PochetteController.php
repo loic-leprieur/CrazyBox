@@ -90,7 +90,7 @@ class PochetteController extends AbstraitController{
 
         //recuperation de la coche secrete
 
-        $secret = isset($_POST['pochSecrete']);
+
 
 
         //creation de la pochette
@@ -100,6 +100,7 @@ class PochetteController extends AbstraitController{
         $pochette->message = $message;
         $pochette->montant = $somme;
         $pochette->id_url = '';
+        $pochette->privee = isset($_POST['pochSecrete']);
         $pochette->save();
 
 
