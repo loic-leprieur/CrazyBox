@@ -22,7 +22,7 @@ abstract class GeneralController{
     }
 
     public function pochette(){
-        $vue = new VueGenerale();
+        $vue = new VuePochette();
         $vue->render();
     }
 }
