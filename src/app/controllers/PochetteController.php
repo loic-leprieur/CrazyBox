@@ -32,7 +32,7 @@ class PochetteController extends AbstraitController{
     public function traiter(){
         //affichage du header
 		$cata = new VueCatalogue(Prestation::orderBy('prix', 'ASC')->get()->toArray());
-		
+
 		$cata = $cata->render();
         $vue = new VuePochette($cata);
         $vue->renderBody();
@@ -100,7 +100,16 @@ class PochetteController extends AbstraitController{
         $pochette->message = $message;
         $pochette->montant = $somme;
         $pochette->id_url = '';
-        $pochette->privee = isset($_POST['pochSecrete']);
+
+        if(isset($_POST['pochSecrete'])){
+
+            $privee = 'oui';
+        }else{
+
+            $privee = 'non';
+        }
+
+        $pochette->privee = $privee;
         $pochette->save();
 
 
@@ -127,7 +136,7 @@ class PochetteController extends AbstraitController{
             $pdo->exec("INSERT INTO `contient`(`idPochette`, `idPrestation`) VALUES ($idPoch, $idPrest)");
 
         }
-		
+
         $vue = new VuePochetteCreee($cagnotte->toArray());
         $vue->renderBody();
 
