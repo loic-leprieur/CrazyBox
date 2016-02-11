@@ -10,7 +10,7 @@ namespace app\controllers;
 use app\controllers\AbstraitController;
 
 class PochetteController extends AbstraitController{
-    public function __construct($m)
+    public function __construct($m = null)
     {
         parent::__construct($m);
     }
