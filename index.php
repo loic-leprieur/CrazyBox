@@ -47,6 +47,11 @@ $app->post('/cagnotte/:id/montant', function($id){
 	$controller->finaliserCagnotte();
 });
 
+$app->post('/cagnotte/:id', function($id){
+	$controller = new app\controllers\CagnotteController($id);
+	$controller->finaliserCagnotte();
+});
+
 $app->get('/detail/:id', function($id) {
 	$controller = new app\controllers\DetailPrestationController($id);
 	$controller->traiter();

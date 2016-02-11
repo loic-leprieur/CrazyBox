@@ -32,6 +32,7 @@ class VueCagnotte extends VueAbstraite
 
 		}else{
 
+
 			$prestations = <<<END
 					<br><br>
 			<h5 class="red-text center-align">Les prestions associées ont été cachées par le créateur de la pochette</h5>
@@ -74,7 +75,7 @@ END;
     			        <br>
     			        	 <h5 class="orange-text text-darken-4 center-align">Montant total de la pochette : $pochette->montant €.   Montant actuel de la cagnotte : $cagnotte->montantActuel €. </h3>
     			        <br>
-    			        <form class="col s12" method="POST" action="$cagnotte->id_url/montant">
+    			        <form class="col s12" method="POST" action="$cagnotte->id_url">
     			            <div class="row">
                                 <div class="input-field col s6 offset-s3">
                                     <i class="material-icons prefix">Don</i>

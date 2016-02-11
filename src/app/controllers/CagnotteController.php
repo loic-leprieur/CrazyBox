@@ -50,12 +50,12 @@ class CagnotteController extends AbstraitController
             $pochette->id_url = uniqid();
             $pochette->save();
 
-
             $vue = new VueCagnotteAtteinte($pochette->toArray());
             $vue->renderBody();
 
 
         }else{
+
 
             $vue = new VueCagnotte(Cagnotte::where("id_url","=",$this->id)->get()->toArray());
             $vue->renderBody();
