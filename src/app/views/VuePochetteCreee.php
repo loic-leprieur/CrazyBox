@@ -25,12 +25,12 @@ class VuePochetteCreee extends VueAbstraite
     	$html .= <<<END
     	<div class="row">
     		<div class="col s12">
-    			<p>
+    			<p class="center-align pink-text text-darken-3">
     				Votre pochette surprise a bien été créée.<br>
     				Vous pouvez y accéder en cliquant sur ce lien :
     			</p>
     			<br>
-    			<a href="/cagnotte/$url">$this->racine/cagnotte/$url</a>
+    			<h4 class="center-align"><a href="/cagnotte/$url" class="orange-text text-darken-4">$this->racine/cagnotte/$url</a></h4>
     			
     		</div>    	
     	</div>
