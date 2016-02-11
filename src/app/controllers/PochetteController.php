@@ -9,6 +9,7 @@
 namespace app\controllers;
 use app\controllers\AbstraitController;
 use app\models\Cagnotte;
+use app\models\Pochette;
 use app\models\Prestation;
 use app\views\VueAccueil;
 use app\views\VuePochette;
@@ -74,7 +75,10 @@ class PochetteController extends AbstraitController{
 
         if(sizeof($objSelc) < 3){
 
-            header("location:/pochette");
+
+            echo "Pas bon !!!!!";
+            exit;
+            //header("location:/pochette");
 
         }
 
@@ -83,11 +87,40 @@ class PochetteController extends AbstraitController{
         $secret = isset($_POST['pochSecrete']);
 
 
+        //creation de la pochette
+
+        $pochette = new Pochette();
+        $pochette->nom = $nom;
+        $pochette->message = $message;
+        $pochette->montant = $somme;
+        $pochette->id_url = '';
+        $pochette->save();
+
+
+        //creation de la cagnote
 
         $cagnote = new Cagnotte();
-        $cagnote->montantActuel = $somme;
-        $cagnote->atteinte = 0;
+        $cagnote->idPochette = $pochette->id;
+        $cagnote->montantActuel = 0;
+        $cagnote->atteinte = 'n';
+        $cagnote->id_url = uniqid();
+        $cagnote->save();
 
 
+        // insertion dans la table contient
+
+        $idPoch = filter_var($pochette->id, FILTER_SANITIZE_NUMBER_INT);
+
+        for($i = 0 ; $i < sizeof($objSelc); $i++){
+
+            $idPrest = filter_var($objSelc[$i], FILTER_SANITIZE_NUMBER_INT);
+            Prestation::hydrateRaw("INSERT INTO `contient`(`idPochette`, `idPrestation`) VALUES ($idPoch, $idPrest)");
+
+        }
+
+        echo "Ok!";
+
+
+        //appeler le render
     }
 }
