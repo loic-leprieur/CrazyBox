@@ -28,10 +28,7 @@ class VisuelController
 
     public function traiter() {
 
-
-        $cagnotte = Cagnotte::where("id_url","=",$this->id)->get()->toArray();
-        $pochette = Pochette::find($cagnotte->idPochette);
-
+        $pochette = Pochette::where("id_url","=",$this->id)->get();
 
         $vue = new VueVisuel($pochette);
         $vue->renderBody();

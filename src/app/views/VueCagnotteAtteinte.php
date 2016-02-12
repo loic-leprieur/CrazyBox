@@ -23,7 +23,7 @@ class VueCagnotteAtteinte extends VueAbstraite
     		<div class="col s12">
     			<h5 class="center-align pink-text text-darken-3">
     				La cagnotte de votre pochette surprise a été atteinte.<br>
-    				Vous pouvez désormais l'offre en partageant ce lien :
+    				Vous pouvez désormais voir l'offre en partageant ce lien :
     			</h5>
     			<br>
     			<h4 class="center-align">

@@ -20,8 +20,8 @@ class VueVisuel extends VueAbstraite
     }
 
     public function render(){
-        $numpoch = $this->params[0]['idPochette'];
-        $nomdest = Pochette::find($numpoch)['nom'];
+        $numpoch = $this->params[0]->id;
+        $nomdest = $this->params[0]->nom;
 
         $vue = new VueCatalogue();
         $prestations = $vue->genererImage($numpoch);
