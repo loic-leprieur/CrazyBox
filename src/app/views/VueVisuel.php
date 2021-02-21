@@ -8,7 +8,6 @@
 
 namespace app\views;
 
-
 use app\models\Pochette;
 use app\models\Prestation;
 
@@ -25,7 +24,7 @@ class VueVisuel extends VueAbstraite
 
         $vue = new VueCatalogue();
         $prestations = $vue->genererImage($numpoch);
-		$i = count($prestations)-1;
+		$i = $vue->numberOfPrestations-1;
         $html = <<<END
     	<br><br><br>
         <div class="row">
