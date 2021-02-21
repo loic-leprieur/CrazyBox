@@ -7,6 +7,8 @@ use app\models\Prestation;
  */
 class VueCatalogue extends VueAbstraite {
 
+	public $numberOfPrestations;
+
 	/**
 	 * 
 	 * 
@@ -14,6 +16,7 @@ class VueCatalogue extends VueAbstraite {
 	 */
 	public function __construct(array $params = null) {
 		parent::__construct($params);
+		$numberOfPrestations = 0;
 	}
 
 	/**
@@ -154,6 +157,7 @@ END;
 END;
 $id++;
 		}
+		$this->numberOfPrestations = $id;
 
 		$html.= <<<END
 		</tbody>
